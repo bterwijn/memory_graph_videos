@@ -1,4 +1,4 @@
-\documentclass[10pt]{beamer}
+\documentclass[10pt, colorlinks=true, urlcolor=blue]{beamer}
 
 % Themes and colors for a professional look
 \usetheme{Madrid}
@@ -8,37 +8,66 @@
 \setbeamercolor{block title}{fg=white,bg=blue!80!black}
 \setbeamercolor{block body}{bg=blue!5!white}
 
-\title{Python Data Model}
+
+% Set hyperlink colors
+\hypersetup{
+    colorlinks=true,    % Enable colored links
+    urlcolor=blue,      % Color for URLs
+    linkcolor=blue      % Color for internal links (optional)
+}
+
+\title{Mutability in the Python Data Model}
 \author{Bas Terwijn}
 %\institute{\href{mailto:b.terwijn@uva.nl}{b.terwijn@uva.nl}}
 \date{\today}
 
 \begin{document}
 
-% Title slide
 \begin{frame}
     \titlepage
 \end{frame}
-\begin{frame}{Immutable or Mutable}
+
+\begin{frame}{Mutability in the Python Data Model}
+
+  The \href{https://docs.python.org/3/reference/datamodel.html}{\texttt{Python Data Model}} it a large topic, here we will focus only on:
+  \begin{itemize}
+  \item Mutability
+  \item Coping Values
+  \end{itemize}
+
+  \vspace{2em}
+  
+  These concepts are fundamental to Python programming.
+  \begin{itemize}
+    \item If you don't understand these you will create \textbf{bugs} that are very hard fix.
+  \end{itemize}
+
+  \vspace{2em}
+  
+  We will demonstrate visualization tools to help build a solid understanding:
+  \begin{itemize}
+  \item \href{https://pypi.org/project/memory-graph/}{\texttt{Memory\_Graph}}
+  \item \href{https://pythontutor.com/}{\texttt{Python Tutor}}
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Immutable and Mutable Types}
     \begin{block}{Python Types}
-        Python has two different categories of types:
+        Python has two distinct categories of types: Immutable, Mutable
     \end{block}
 
-    \vspace{1em}
+    \vspace{3em}
     
-    \textbf{Immutable Types:}
-    \begin{itemize}
-        \item \texttt{bool}, \texttt{int}, \texttt{float}, \texttt{complex}, \texttt{str}, \texttt{tuple}, \texttt{bytes}, \texttt{frozenset}
-    \end{itemize}
-    \textit{An immutable value \textbf{cannot} be modified in place. If you change it, a new copy is created.}
+    \textbf{Immutable Types:} \texttt{bool}, \texttt{int}, \texttt{float}, \texttt{complex}, \texttt{str}, \texttt{tuple}, \texttt{bytes}, \texttt{frozenset} \\
+    \vspace{0.5em}
+    A value of an immutable type \textbf{cannot} be changed in place. If you do change it, a new copy of the value is created. \\
     
-    \vspace{1em}
+    \vspace{3em}
     
-    \textbf{Mutable Types:}
-    \begin{itemize}
-        \item \texttt{list}, \texttt{dict}, \texttt{set}, \texttt{classes}, \dots (most other types) 
-    \end{itemize}
-    \textit{A mutable value \textbf{can} be modified in place.}
+    \textbf{Mutable Types:} \texttt{list}, \texttt{set}, \texttt{dict}, \texttt{classes}, \dots (most other types) \\
+    \vspace{0.5em}
+    A value of a mutable type \textbf{can} be changed in place.
     
 \end{frame}
 
@@ -50,10 +79,12 @@
         \item \textbf{Shallow Copy (c2):} only the value referenced by the first reference is copied, all the underlying values are shared
         \item \textbf{Deep Copy (c3):} all the values are copied, nothing is shared
     \end{itemize}
-
+    
+    \vspace{-1em}
     % Insert image here
-    \begin{center}\includegraphics[width=0.4\textwidth]{figures/copy.png}\end{center}
-
+    \begin{center}\includegraphics[width=0.45\textwidth]{figures/copy.png}\end{center}
+    \vspace{-1em}
+    
     \begin{itemize}
         \item \textbf{Custom Copy:} write a function with your own copy logic
     \end{itemize}
@@ -64,8 +95,47 @@
   \begin{itemize}
   \item If you don't want that, make a copy.
   \end{itemize}
-  \begin{center}\includegraphics[width=0.6\textwidth]{figures/function_call.png}\end{center}
-
+  \begin{center}\includegraphics[width=0.65\textwidth]{figures/function_call.png}\end{center}
 \end{frame}
+
+\begin{frame}{Memory\_Graph Debugger Setup}
+  install
+  debugger, vscode
+  blocking pdf reader, different format
+\end{frame}
+
+\begin{frame}{Memory\_Graph Non-Debugger Setup}
+  add code where to show/render
+\end{frame}
+
+\begin{frame}{Python Tutor}
+  example add\_one
+  Pros:
+  \begin{itemize}
+  \item no installation or setup required
+  \item can debug backwards
+  \item widely used
+  \end{itemize}
+  Cons:
+  \begin{itemize}
+  \item runs in a webbrower
+  \item limited program: size, runtime, memory usage
+  \item can only import standard library modules
+  \item no reading/writing files and command-line arguments 
+  \end{itemize}
+  
+\end{frame}
+
+\begin{frame}{Example: Recursion}
+  factorial
+  power\_set
+\end{frame}
+
+\begin{frame}{Example: Linked List}
+\end{frame}
+
+\begin{frame}{Exercise}
+\end{frame}
+
 
 \end{document}
