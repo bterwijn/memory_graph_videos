@@ -101,7 +101,7 @@ Sometimes you want this, but when you don't you have to make a copy so that each
 
 
 \begin{frame}[fragile]
-  \frametitle {Copying Mutable Values}
+  \frametitle{Copying Mutable Values}
   When ``copying'' a \textbf{mutable} value, consider the amount of sharing you need:
   \vspace{-1em}
 \begin{columns}
@@ -123,13 +123,57 @@ Sometimes you want this, but when you don't you have to make a copy so that each
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Function Call}
+\begin{frame}[fragile]
+\frametitle{Function Call}
   Calling a function with a \textbf{mutable} value might change that value.
   \begin{itemize}
   \item If you don't want that, make a copy.
   \end{itemize}
-  \begin{center}\includegraphics[width=0.65\textwidth]{figures/function_call.png}\end{center}
+
+  \begin{columns}
+    \column{0.4\textwidth}
+    \begin{minted}[fontsize=\small]{python}
+      def add_one(a, b, c):
+         a += [1]
+         b += (1,)
+         c += [1]
+         
+      a = [4, 3, 2]
+      b = (4, 3, 2)
+      c = [4, 3, 2]
+      add_one(a, b, c.copy())
+    \end{minted}
+    \column{0.6\textwidth}
+    \begin{center}\includegraphics[width=0.9\textwidth]{figures/function_call.png}\end{center}
+  \end{columns}
 \end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Function Call}
+  Calling a function with a \textbf{mutable} value might change that value.
+  \begin{itemize}
+  \item If you don't want that, make a copy.
+  \end{itemize}
+
+  \begin{columns}
+    \column{0.4\textwidth}
+    \begin{minted}[fontsize=\small]{python}
+      def add_one(a, b, c):
+         a += [1]
+         b += (1,)
+         c = c.copy()
+         c += [1]
+         
+      a = [4, 3, 2]
+      b = (4, 3, 2)
+      c = [4, 3, 2]
+      add_one(a, b, c)
+    \end{minted}
+    \column{0.6\textwidth}
+    \begin{center}\includegraphics[width=0.9\textwidth]{figures/function_call.png}\end{center}
+  \end{columns}
+\end{frame}
+
 
 \begin{frame}{Memory\_Graph Debugger Setup}
   install
