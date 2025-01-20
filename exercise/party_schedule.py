@@ -1,3 +1,4 @@
+import memory_graph
 import copy
 
 # create initial schedule
@@ -69,7 +70,7 @@ def print_schedule(schedule):
         for month in schedule[year]:
             print(f'  {month}')
             for index, band in enumerate(schedule[year][month]):
-                print(f'    week{index+1}: {' '.join(band)}')
+                print(f'    week{index+1}   {" ".join(band)}')
 
 if __name__ == "__main__":
     main()

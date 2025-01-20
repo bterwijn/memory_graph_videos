@@ -1,6 +1,6 @@
 import memory_graph
-import copy
 import party_schedule
+import copy
 
 # copy the initial state from party_schedule.py
 schedule    = copy.deepcopy(party_schedule.schedule)

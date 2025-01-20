@@ -32,6 +32,7 @@ def main():
     colorama.init()
     schedule1 = party_schedule.schedule
     schedule2 = party_schedule_solution.schedule
+    all_correct = True
     for i in range(0,len(exercise_functions)):
         print(f'=== exercise{i+1}', end='')
         exercise_functions[i](schedule1)
@@ -41,9 +42,12 @@ def main():
         if str1 != str2:
             print()
             print_error_message(str1,str2)
+            all_correct = False
             break
         else:
             print(' OK')
+    if all_correct:
+        print('=== All exercises OK, Great Work!!!')
 
 def schedule_to_string(schedule):
     strbuf = io.StringIO()
