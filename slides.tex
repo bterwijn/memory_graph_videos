@@ -27,19 +27,19 @@
     \titlepage
 \end{frame}
 
-\begin{frame}{Mutability in the Python Data Model}
+\begin{frame}{Content}
 
-  The \href{https://docs.python.org/3/reference/datamodel.html}{\texttt{Python Data Model}} it a large topic, here we will focus only on:
+  The \href{https://docs.python.org/3/reference/datamodel.html}{\texttt{Python Data Model}} it a large topic, we will focus only on:
   \begin{itemize}
-  \item Mutability
-  \item Coping Values
+  \item Mutability of Types
+  \item Coping Mutable Values
   \end{itemize}
 
   \vspace{2em}
   
   These concepts are fundamental to Python programming.
   \begin{itemize}
-    \item If you don't understand these you will create \textbf{bugs} that are very hard fix.
+    \item without a solid understanding you can't avoid certain bugs
   \end{itemize}
 
   \vspace{2em}
@@ -49,6 +49,11 @@
   \item \href{https://pypi.org/project/memory-graph/}{\texttt{Memory\_Graph}}
   \item \href{https://pythontutor.com/}{\texttt{Python Tutor}}
   \end{itemize}
+
+  \vspace{2em}
+
+  We will finish with an exercise to test your understanding.
+  
 \end{frame}
 
 
@@ -61,13 +66,15 @@
     
     \textbf{Immutable Types:} \texttt{bool}, \texttt{int}, \texttt{float}, \texttt{complex}, \texttt{str}, \texttt{tuple}, \texttt{bytes}, \texttt{frozenset} \\
     \vspace{0.5em}
-    A value of an immutable type \textbf{cannot} be changed in place. If you do change it, a new copy of the value is created. \\
+    A value of an immutable type \textbf{cannot} be changed in place. \\
+    Therefore, \textbf{a} copy is made when you change it. \\
     
     \vspace{3em}
     
     \textbf{Mutable Types:} \texttt{list}, \texttt{set}, \texttt{dict}, \texttt{classes}, \dots (most other types) \\
     \vspace{0.5em}
-    A value of a mutable type \textbf{can} be changed in place.
+    A value of a mutable type \textbf{can} be changed in place. \\
+    \textbf{No} copy is made when you change it.
     
 \end{frame}
 
@@ -105,7 +112,7 @@
 \end{frame}
 
 \begin{frame}{Memory\_Graph Non-Debugger Setup}
-  add code where to show/render
+  insert code where to show/render
 \end{frame}
 
 \begin{frame}{Python Tutor}
@@ -131,10 +138,8 @@
   power\_set
 \end{frame}
 
-\begin{frame}{Example: Linked List}
-\end{frame}
-
 \begin{frame}{Exercise}
+  mental model
 \end{frame}
 
 
