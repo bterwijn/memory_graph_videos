@@ -7,7 +7,7 @@ all: $(PDF)
 
 # Rule to convert .tex to .pdf
 %.pdf: %.tex
-	pdflatex $<
+	pdflatex -shell-escape $<
 
 # Clean up auxiliary files
 clean:

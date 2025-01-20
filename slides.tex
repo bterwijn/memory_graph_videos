@@ -16,9 +16,11 @@
     linkcolor=blue      % Color for internal links (optional)
 }
 
+\usepackage{minted}
+
 \title{Mutability in the Python Data Model}
 \author{Bas Terwijn}
-%\institute{\href{mailto:b.terwijn@uva.nl}{b.terwijn@uva.nl}}
+\titlegraphic{\includegraphics[width=0.6\textwidth]{figures/uva.png}}
 \date{\today}
 
 \begin{document}
@@ -39,12 +41,12 @@
   
   These concepts are fundamental to Python programming.
   \begin{itemize}
-    \item without a solid understanding you can't avoid certain bugs
+    \item without a solid understanding you cannot avoid certain bugs
   \end{itemize}
 
   \vspace{2em}
   
-  We will demonstrate visualization tools to help build a solid understanding:
+  To help build a solid understanding we will demonstrate visualization tools:
   \begin{itemize}
   \item \href{https://pypi.org/project/memory-graph/}{\texttt{Memory\_Graph}}
   \item \href{https://pythontutor.com/}{\texttt{Python Tutor}}
@@ -52,8 +54,7 @@
 
   \vspace{2em}
 
-  We will finish with an exercise to test your understanding.
-  
+  We will finish with an exercise with which you can test your understanding.
 \end{frame}
 
 
@@ -65,35 +66,60 @@
     \vspace{3em}
     
     \textbf{Immutable Types:} \texttt{bool}, \texttt{int}, \texttt{float}, \texttt{complex}, \texttt{str}, \texttt{tuple}, \texttt{bytes}, \texttt{frozenset} \\
-    \vspace{0.5em}
+    
+    \vspace{-0.8em}
     A value of an immutable type \textbf{cannot} be changed in place. \\
     Therefore, \textbf{a} copy is made when you change it. \\
     
-    \vspace{3em}
+    \vspace{2.5em}
     
     \textbf{Mutable Types:} \texttt{list}, \texttt{set}, \texttt{dict}, \texttt{classes}, \dots (most other types) \\
-    \vspace{0.5em}
+    
+    \vspace{-0.8em}
     A value of a mutable type \textbf{can} be changed in place. \\
     \textbf{No} copy is made when you change it.
     
 \end{frame}
 
+\begin{frame}[fragile]
+  \frametitle {Sharing Mutable Values}
+  When two variable share a \textbf{mutable} value, changing one changes the other.
+  \vspace{1em}
+\begin{columns}
+  \column{0.3\textwidth}
+  \begin{minted}[fontsize=\small]{python}
+           a = [4, 3, 2]
+           b = a
+           a += [1]
+    \end{minted}
+  \column{0.7\textwidth}
+    \begin{center}\includegraphics[width=0.25\textwidth]{figures/sharing.png}\end{center}
+\end{columns}
+\vspace{1em}
+Sometimes you want this, but when you don't you have to make a copy so that each variable has its own independent value.
+\end{frame}
 
-\begin{frame}{Copying Mutable Values}
+
+\begin{frame}[fragile]
+  \frametitle {Copying Mutable Values}
   When ``copying'' a \textbf{mutable} value, consider the amount of sharing you need:
+  \vspace{-1em}
+\begin{columns}
+  \column{0.4\textwidth}
+  \begin{minted}[fontsize=\small]{python}
+      a = [[1, 2], ['x', 'y']]
+      c1 = a
+      c2 = copy.copy(a)
+      c3 = copy.deepcopy(a)
+    \end{minted}
+  \column{0.6\textwidth}
+    \begin{center}\includegraphics[width=0.7\textwidth]{figures/copy.png}\end{center}
+\end{columns}
     \begin{itemize}
-        \item \textbf{Assignment (c1):} nothing is copied, all the values are shared
-        \item \textbf{Shallow Copy (c2):} only the value referenced by the first reference is copied, all the underlying values are shared
-        \item \textbf{Deep Copy (c3):} all the values are copied, nothing is shared
-    \end{itemize}
-    
-    \vspace{-1em}
-    % Insert image here
-    \begin{center}\includegraphics[width=0.45\textwidth]{figures/copy.png}\end{center}
-    \vspace{-1em}
-    
-    \begin{itemize}
-        \item \textbf{Custom Copy:} write a function with your own copy logic
+        \item \textbf{c1: Assignment,} nothing is copied, all the values are shared
+        \item \textbf{c2: Shallow Copy,} only the value referenced by the first reference is copied, all the underlying values are shared
+        \item \textbf{c3: Deep Copy,} all the values are copied, nothing is shared
+        \item \ \ \, \,\, \textbf{Custom Copy,} alternatively write your own copy logic
     \end{itemize}
 \end{frame}
 
@@ -122,6 +148,7 @@
   \item no installation or setup required
   \item can debug backwards
   \item widely used
+  \item support multiple programming languages
   \end{itemize}
   Cons:
   \begin{itemize}
@@ -130,7 +157,6 @@
   \item can only import standard library modules
   \item no reading/writing files and command-line arguments 
   \end{itemize}
-  
 \end{frame}
 
 \begin{frame}{Example: Recursion}
