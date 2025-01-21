@@ -7,7 +7,27 @@
 \setbeamercolor{frametitle}{fg=white,bg=blue!70!black}
 \setbeamercolor{block title}{fg=white,bg=blue!80!black}
 \setbeamercolor{block body}{bg=blue!5!white}
+\setbeamerfont{title}{size=\fontsize{12}{16}\selectfont}
 
+% Customize the footline layout
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+    % Left field (author or custom text)
+    \begin{beamercolorbox}[wd=0.25\paperwidth,ht=2.5ex,dp=1ex,center]{author in head/foot}%
+      \usebeamerfont{author in head/foot}\insertshortauthor
+    \end{beamercolorbox}%
+    % Middle field (title)
+    \begin{beamercolorbox}[wd=0.5\paperwidth,ht=2.5ex,dp=1ex,center]{title in head/foot}%
+      \usebeamerfont{title in head/foot}\insertshorttitle
+    \end{beamercolorbox}%
+    % Right field (page number)
+    \begin{beamercolorbox}[wd=0.25\paperwidth,ht=2.5ex,dp=1ex,center]{date in head/foot}%
+      \usebeamerfont{date in head/foot}\insertframenumber/\inserttotalframenumber
+    \end{beamercolorbox}%
+  }%
+}
 
 % Set hyperlink colors
 \hypersetup{
@@ -18,7 +38,7 @@
 
 \usepackage{minted}
 
-\title{Mutability in the Python Data Model}
+\title{Python Mutability Explained Visually Using `memory\_graph'}
 \author{Bas Terwijn}
 \titlegraphic{\includegraphics[width=0.6\textwidth]{figures/uva.png}}
 \date{\today}
@@ -31,7 +51,7 @@
 
 \begin{frame}{Content}
 
-  The \href{https://docs.python.org/3/reference/datamodel.html}{\texttt{Python Data Model}} it a large topic, we will focus only on:
+  We will cover these \href{https://docs.python.org/3/reference/datamodel.html}{\texttt{Python Data Model}} topics:
   \begin{itemize}
   \item Mutability of Types
   \item Coping Mutable Values
@@ -46,15 +66,15 @@
 
   \vspace{2em}
   
-  To help build a solid understanding we will demonstrate visualization tools:
+  We will use visualization tools to help build a solid understanding:
   \begin{itemize}
-  \item \href{https://pypi.org/project/memory-graph/}{\texttt{Memory\_Graph}}
+  \item \href{https://pypi.org/project/memory-graph/}{\texttt{memory\_graph}}
   \item \href{https://pythontutor.com/}{\texttt{Python Tutor}}
   \end{itemize}
 
   \vspace{2em}
 
-  We will finish with an exercise with which you can test your understanding.
+  We finish with an exercise with which you can test your understanding.
 \end{frame}
 
 
@@ -124,7 +144,7 @@ Sometimes you want this, but when you don't you have to make a copy so that each
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{Function Call}
+\frametitle{Function Calls}
   Calling a function with a \textbf{mutable} value might change that value.
   \begin{itemize}
   \item If you don't want that, make a copy.
@@ -149,7 +169,7 @@ Sometimes you want this, but when you don't you have to make a copy so that each
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{Function Call}
+\frametitle{Function Calls}
   Calling a function with a \textbf{mutable} value might change that value.
   \begin{itemize}
   \item If you don't want that, make a copy.
