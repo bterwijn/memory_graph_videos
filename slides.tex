@@ -54,7 +54,7 @@
   We will cover these \href{https://docs.python.org/3/reference/datamodel.html}{\texttt{Python Data Model}} topics:
   \begin{itemize}
   \item Mutability of Types
-  \item Coping Mutable Values
+  \item Coping Values
   \end{itemize}
 
   \vspace{2em}
@@ -83,7 +83,7 @@
         Python has two distinct categories of types: Immutable, Mutable
     \end{block}
 
-    \vspace{3em}
+    \vspace{2em}
     
     \textbf{Immutable Types:} \texttt{bool}, \texttt{int}, \texttt{float}, \texttt{complex}, \texttt{str}, \texttt{tuple}, \texttt{bytes}, \texttt{frozenset} \\
     
@@ -91,7 +91,7 @@
     A value of an immutable type \textbf{cannot} be changed in place. \\
     Therefore, \textbf{a} copy is made when you change it. \\
     
-    \vspace{2.5em}
+    \vspace{2.0em}
     
     \textbf{Mutable Types:} \texttt{list}, \texttt{set}, \texttt{dict}, \texttt{classes}, \dots (most other types) \\
     
@@ -116,12 +116,12 @@
     \begin{center}\includegraphics[width=0.25\textwidth]{figures/sharing.png}\end{center}
 \end{columns}
 \vspace{1em}
-Sometimes you want this, but when you don't you have to make a copy so that each variable has its own independent value.
+Sometimes we want this, but when we don't we have to \textbf{make a copy} so that each variable has its own independent value.
 \end{frame}
 
 
 \begin{frame}[fragile]
-  \frametitle{Copying Mutable Values}
+  \frametitle{Copying Values}
   When ``copying'' a \textbf{mutable} value, consider the amount of sharing you need:
   \vspace{-1em}
 \begin{columns}
@@ -179,9 +179,9 @@ Sometimes you want this, but when you don't you have to make a copy so that each
     \column{0.4\textwidth}
     \begin{minted}[fontsize=\small]{python}
       def add_one(a, b, c):
+         c = c.copy() # or here?
          a += [1]
          b += (1,)
-         c = c.copy()
          c += [1]
          
       a = [4, 3, 2]
@@ -219,7 +219,7 @@ Sometimes you want this, but when you don't you have to make a copy so that each
   \item runs in a webbrower
   \item limited program: size, runtime, memory usage
   \item can only import standard library modules
-  \item no reading/writing files and command-line arguments 
+  \item no reading/writing files or command-line arguments
   \end{itemize}
 \end{frame}
 
