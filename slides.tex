@@ -38,7 +38,7 @@
 
 \usepackage{minted}
 
-\title{Python Mutability Explained Visually Using `memory\_graph'}
+\title{Python Mutability Visually Explained}
 \author{Bas Terwijn}
 \titlegraphic{\includegraphics[width=0.6\textwidth]{figures/uva.png}}
 \date{\today}
@@ -54,6 +54,7 @@
   We will cover these \href{https://docs.python.org/3/reference/datamodel.html}{\texttt{Python Data Model}} topics:
   \begin{itemize}
   \item Mutability of Types
+  \item Variables are References to Values
   \item Coping Values
   \end{itemize}
 
@@ -97,7 +98,7 @@
     
     \vspace{-0.8em}
     A value of a mutable type \textbf{can} be changed in place. \\
-    \textbf{No} copy is made when you change it.
+    Therefore, \textbf{no} copy is made when you change it.
     
 \end{frame}
 
@@ -210,9 +211,10 @@ Sometimes we want this, but when we don't we have to \textbf{make a copy} so tha
   Pros:
   \begin{itemize}
   \item no installation or setup required
+  \item widely known
+  \item supports multiple programming languages
   \item can debug backwards
-  \item widely used
-  \item support multiple programming languages
+  \item graph stability over time
   \end{itemize}
   Cons:
   \begin{itemize}
