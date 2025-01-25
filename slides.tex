@@ -198,12 +198,13 @@ Sometimes we want this, but when we don't we have to \textbf{make a copy} so tha
 
 \begin{frame}{memory\_graph Debugger Setup}
   \vspace{-1em}
+  memory\_graph Debugger Setup:
   \begin{itemize}
   \item install \href{https://pypi.org/project/memory-graph/}{\texttt{memory\_graph}} and \href{https://graphviz.org/download/}{\texttt{Graphviz}}
   \item open Python source file in Visual Studio Code
-  \item add line: \\ \ \ \ {\footnotesize \mintinline{python}{import memory_graph}}
+  \item add line: \\ \ \ \ {\footnotesize \mintinline{python}{import memory_graph as mg}}
   \item set a breakpoint and start the debugger
-  \item add watch: \\ \ \ \ {\footnotesize \mintinline{python}{memory_graph.render(memory_graph.get_call_stack_vscode(), 'my_graph.pdf')}}
+  \item add watch: \\ \ \ \ {\footnotesize \mintinline{python}{mg.render(mg.get_call_stack_vscode(), 'my_graph.pdf')}}
   \item manually open file ``my\_graph.pdf'', resize window,  and set 'Always on Top'
   \end{itemize}
   
@@ -212,25 +213,32 @@ Sometimes we want this, but when we don't we have to \textbf{make a copy} so tha
   Problem with Adobe Acrobat Reader that blocks updates to the PDF file:
   \begin{itemize}
   \item install non-blocking PDF reader as your 'Default PDF Reader': \\ \ \ \ Evince, Okular, SumatraPDF, ...
-  \item or add watch: \\ \ \ \ {\footnotesize \mintinline{python}{memory_graph.render(memory_graph.get_call_stack_vscode(), 'my_graph.png')}}
+  \item or add watch: \\ \ \ \ {\footnotesize \mintinline{python}{mg.render(mg.get_call_stack_vscode(), 'my_graph.png')}}
   \end{itemize}
-  \vspace{2em}
 \end{frame}
 
-\begin{frame}{memory\_graph Non-Debugger Setup}
-  \vspace{-1em}
+\begin{frame}[fragile]\frametitle{memory\_graph Non-Debugger Setup}
+  memory\_graph Non-Debugger Setup:
   \begin{itemize}
   \item install \href{https://pypi.org/project/memory-graph/}{\texttt{memory\_graph}} and \href{https://graphviz.org/download/}{\texttt{Graphviz}}
   \item open Python source file in any editor
-  \item add line: \\ \ \ \ {\footnotesize \mintinline{python}{import memory_graph}}
+  \item add line: \\ \ \ \ {\footnotesize \mintinline{python}{import memory_graph as mg}}
   \item add line where you want to graph: \\
-    \ \ \ {\footnotesize \mintinline{python}{memory_graph.show(memory_graph.get_call_stack())}}\\
-    \ \ \ {\footnotesize \mintinline{python}{memory_graph.render(memory_graph.get_call_stack(), 'my_graph.png')}}\\
+    \ \ \ {\footnotesize \mintinline{python}{mg.show(mg.get_call_stack())}}\\
+    \ \ \ {\footnotesize \mintinline{python}{mg.render(mg.get_call_stack(), 'my_graph.png')}}\\
   \item add parameter to block for \texttt{<Enter>} key press:\\
     \ \ \ {\footnotesize \mintinline{python}{block=True}}
   \item see \href{https://pypi.org/project/memory-graph/}{\texttt{memory\_graph}} docs for examples
   \end{itemize}
-  \vspace{8.5em}
+
+  \vspace{2em}
+  
+  Aliases:
+ \begin{minted}[fontsize=\small]{python}
+   from memory_graph import d, ds
+   d()  # mg.show(locals(), block=True)
+   ds() # mg.show(mg.get_call_stack(), block=True)
+ \end{minted}
 \end{frame}
 
 
