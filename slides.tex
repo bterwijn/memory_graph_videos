@@ -196,29 +196,59 @@ Sometimes we want this, but when we don't we have to \textbf{make a copy} so tha
 \end{frame}
 
 
-\begin{frame}{Memory\_Graph Debugger Setup}
-  install
-  debugger, vscode
-  blocking pdf reader, different format
+\begin{frame}{memory\_graph Debugger Setup}
+  \vspace{-1em}
+  \begin{itemize}
+  \item install \href{https://pypi.org/project/memory-graph/}{\texttt{memory\_graph}} and \href{https://graphviz.org/download/}{\texttt{Graphviz}}
+  \item open Python source file in Visual Studio Code
+  \item add line: \\ \ \ \ {\footnotesize \mintinline{python}{import memory_graph}}
+  \item set a breakpoint and start the debugger
+  \item add watch: \\ \ \ \ {\footnotesize \mintinline{python}{memory_graph.render(memory_graph.get_call_stack_vscode(), 'my_graph.pdf')}}
+  \item manually open file ``my\_graph.pdf'', resize window,  and set 'Always on Top'
+  \end{itemize}
+  
+  \vspace{2em}
+  
+  Problem with Adobe Acrobat Reader that blocks updates to the PDF file:
+  \begin{itemize}
+  \item install non-blocking PDF reader as your 'Default PDF Reader': \\ \ \ \ Evince, Okular, SumatraPDF, ...
+  \item or add watch: \\ \ \ \ {\footnotesize \mintinline{python}{memory_graph.render(memory_graph.get_call_stack_vscode(), 'my_graph.png')}}
+  \end{itemize}
+  \vspace{2em}
 \end{frame}
 
-\begin{frame}{Memory\_Graph Non-Debugger Setup}
-  insert code where to show/render
+\begin{frame}{memory\_graph Non-Debugger Setup}
+  \vspace{-1em}
+  \begin{itemize}
+  \item install \href{https://pypi.org/project/memory-graph/}{\texttt{memory\_graph}} and \href{https://graphviz.org/download/}{\texttt{Graphviz}}
+  \item open Python source file in any editor
+  \item add line: \\ \ \ \ {\footnotesize \mintinline{python}{import memory_graph}}
+  \item add line where you want to graph: \\
+    \ \ \ {\footnotesize \mintinline{python}{memory_graph.show(memory_graph.get_call_stack())}}\\
+    \ \ \ {\footnotesize \mintinline{python}{memory_graph.render(memory_graph.get_call_stack(), 'my_graph.png')}}\\
+  \item add parameter to block for \texttt{<Enter>} key press:\\
+    \ \ \ {\footnotesize \mintinline{python}{block=True}}
+  \item see \href{https://pypi.org/project/memory-graph/}{\texttt{memory\_graph}} docs for examples
+  \end{itemize}
+  \vspace{8.5em}
 \end{frame}
+
 
 \begin{frame}{Python Tutor}
-  example add\_one
+  \href{https://pythontutor.com/}{\texttt{Python Tutor}}\\ 
+  Philip J. Guo, Associate Professor of Cognitive Science, University of California\\
+  \vspace{1em}\\
   Pros:
   \begin{itemize}
   \item no installation or setup required
   \item widely known
   \item supports multiple programming languages
   \item can debug backwards
-  \item graph stability over time
+  \item good graph stability over time
   \end{itemize}
-  Cons:
+  Cons: (\href{https://docs.google.com/document/d/13_Bc-l2FKMgwPx4dZb0sv7eMfYMHhRVgBRShha8kgbU/}{\texttt{Python Tutor Limitations}})
   \begin{itemize}
-  \item runs in a webbrower
+  \item runs single file in a webbrower
   \item limited program: size, runtime, memory usage
   \item can only import standard library modules
   \item no reading/writing files or command-line arguments
