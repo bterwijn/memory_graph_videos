@@ -1,4 +1,4 @@
-import memory_graph
+import memory_graph as mg
 import band_schedule
 import copy
 
