@@ -80,31 +80,63 @@
 
 
 \begin{frame}{Immutable and Mutable Types}
-    \begin{block}{Python Types}
-        Python has two distinct categories of types: Immutable, Mutable
-    \end{block}
+  \begin{block}{Python Types}
+    Python has two distinct categories of types: Immutable, Mutable
+  \end{block}
+  
+  \vspace{2em}
+  
+  \textbf{Immutable} Types: \texttt{bool}, \texttt{int}, \texttt{float}, \texttt{complex}, \texttt{str}, \texttt{tuple}, \texttt{bytes}, \texttt{frozenset} \\
+  
+  \vspace{-0.8em}
+  A value of an immutable type \textbf{cannot} be changed in place. \\
+  Therefore, \textbf{a} copy is made when you change it. \\
+  
+  \vspace{2.0em}
+  
+  \textbf{Mutable} Types: \texttt{list}, \texttt{set}, \texttt{dict}, \texttt{classes}, \dots (most other types) \\
+  
+  \vspace{-0.8em}
+  A value of a mutable type \textbf{can} be changed in place. \\
+  Therefore, \textbf{no} copy is made when you change it.
+\end{frame}
 
-    \vspace{2em}
-    
-    \textbf{Immutable Types:} \texttt{bool}, \texttt{int}, \texttt{float}, \texttt{complex}, \texttt{str}, \texttt{tuple}, \texttt{bytes}, \texttt{frozenset} \\
-    
-    \vspace{-0.8em}
-    A value of an immutable type \textbf{cannot} be changed in place. \\
-    Therefore, \textbf{a} copy is made when you change it. \\
-    
-    \vspace{2.0em}
-    
-    \textbf{Mutable Types:} \texttt{list}, \texttt{set}, \texttt{dict}, \texttt{classes}, \dots (most other types) \\
-    
-    \vspace{-0.8em}
-    A value of a mutable type \textbf{can} be changed in place. \\
-    Therefore, \textbf{no} copy is made when you change it.
-    
+\begin{frame}{Mutable/Immutable Rational}
+  One practical reason for the distinction between mutable and immutable types:
+
+  \vspace{1.6em}
+  
+  \textbf{Mutable} Types: \texttt{list}, \texttt{set}, \texttt{dict}, \texttt{classes}, \dots (most other types)
+  \begin{itemize}
+  \item values need to change often
+  \item and values can be large
+  \end{itemize}
+  Therefore, inefficient to copy a value each time we change it.
+  
+  \vspace{1.6em}
+  
+  \textbf{Immutable} Types: \texttt{bool}, \texttt{int}, \texttt{float}, \texttt{complex}, \texttt{str}, \texttt{tuple}, \texttt{bytes}, \texttt{frozenset}
+  \begin{itemize}
+  \item values need to change less often
+  \item or values are small
+  \end{itemize}
+  Therefore, automatic copy is less of a concern.
+
+  \vspace{1.6em}
+  
+  Another more technical reason why having immutable types is beneficial:
+  \begin{itemize}
+  \item a value of an immutable type cannot mutate in place
+    \begin{itemize}
+    \item therefore, its hash value never changes
+    \item therefore, it can be safely used as a key in a \texttt{set} or \texttt{dict}
+    \end{itemize}
+  \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle {Sharing Mutable Values}
-  When two variable share a \textbf{mutable} value, changing one changes the other.
+  When two variables share a value of \textbf{mutable} type, changing one changes the other.
   \vspace{1em}
 \begin{columns}
   \column{0.3\textwidth}
@@ -114,7 +146,7 @@
            a += [1]
     \end{minted}
   \column{0.7\textwidth}
-    \begin{center}\includegraphics[width=0.25\textwidth]{figures/sharing.png}\end{center}
+  \begin{center}\includegraphics[width=0.25\textwidth]{figures/sharing.png}\end{center}
 \end{columns}
 \vspace{1em}
 Sometimes we want this, but when we don't we have to \textbf{make a copy} so that each variable has its own independent value.
@@ -123,7 +155,7 @@ Sometimes we want this, but when we don't we have to \textbf{make a copy} so tha
 
 \begin{frame}[fragile]
   \frametitle{Copying Values}
-  When ``copying'' a \textbf{mutable} value, consider the amount of sharing you need:
+  When ``copying'' a value of \textbf{mutable} type, consider the amount of sharing needed:
   \vspace{-1em}
 \begin{columns}
   \column{0.4\textwidth}
@@ -146,7 +178,7 @@ Sometimes we want this, but when we don't we have to \textbf{make a copy} so tha
 
 \begin{frame}[fragile]
 \frametitle{Function Calls}
-  Calling a function with a \textbf{mutable} value might change that value.
+  A function called with a \textbf{mutable} value might change that value.
   \begin{itemize}
   \item If you don't want that, make a copy.
   \end{itemize}
@@ -170,8 +202,8 @@ Sometimes we want this, but when we don't we have to \textbf{make a copy} so tha
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{Function Calls}
-  Calling a function with a \textbf{mutable} value might change that value.
+  \frametitle{Function Calls}
+  A function called with a \textbf{mutable} value might change that value.
   \begin{itemize}
   \item If you don't want that, make a copy.
   \end{itemize}
@@ -208,7 +240,7 @@ Sometimes we want this, but when we don't we have to \textbf{make a copy} so tha
   \item manually open file ``my\_graph.pdf'', resize window,  and set 'Always on Top'
   \end{itemize}
   
-  \vspace{2em}
+  \vspace{1.5em}
   
   Problem with Adobe Acrobat Reader that blocks updates to the PDF file:
   \begin{itemize}
@@ -216,7 +248,9 @@ Sometimes we want this, but when we don't we have to \textbf{make a copy} so tha
     \href{https://www.fosshub.com/Evince.html}{\texttt{Evince}},
     \href{https://okular.kde.org/}{\texttt{Okular}},
     \href{https://www.sumatrapdfreader.org/}{\texttt{SumatraPDF}}, ...
-  \item or add watch: \\ \ \ \ {\footnotesize \mintinline{python}{mg.render(mg.get_call_stack_vscode(), 'my_graph.png')}}
+  \item or add watch: \\
+\ \ \ {\footnotesize \mintinline{python}{mg.render(mg.get_call_stack_vscode(), 'my_graph.png')}} \\
+\ \ \ {\footnotesize \mintinline{python}{mg.render(mg.get_call_stack_vscode(), 'my_graph.svg')}}
   \end{itemize}
 \end{frame}
 
@@ -259,8 +293,16 @@ Sometimes we want this, but when we don't we have to \textbf{make a copy} so tha
 \end{frame}
 
 \begin{frame}{Exercise}
-  mutability.zip
-  mental model
+  \begin{itemize}
+  \item download: \href{https://raw.githubusercontent.com/bterwijn/memory_graph_videos/refs/heads/main/mutability/mutability.zip}{\texttt{mutability.zip}}
+    \begin{itemize}
+    \item slides.pdf
+    \item src
+    \item exercises
+    \end{itemize}
+  \item band\_schedule.py
+  \item mental model
+  \end{itemize}
 \end{frame}
 
 
