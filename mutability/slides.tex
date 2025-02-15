@@ -41,7 +41,7 @@
 \title{Python Mutability Visually Explained Using memory\_graph}
 \author{Bas Terwijn}
 \titlegraphic{\includegraphics[width=0.6\textwidth]{figures/uva.png}}
-\date{\today}
+\date{}
 
 \begin{document}
 
@@ -54,7 +54,7 @@
   We will cover these \href{https://docs.python.org/3/reference/datamodel.html}{\texttt{Python Data Model}} topics:
   \begin{itemize}
   \item Mutability of Types
-  \item Variables are References to Values
+  \item References to Values
   \item Coping Values
   \end{itemize}
 
@@ -212,7 +212,10 @@ Sometimes we want this, but when we don't we have to \textbf{make a copy} so tha
   
   Problem with Adobe Acrobat Reader that blocks updates to the PDF file:
   \begin{itemize}
-  \item install non-blocking PDF reader as your 'Default PDF Reader': \\ \ \ \ Evince, Okular, SumatraPDF, ...
+  \item install non-blocking PDF reader as your 'Default PDF Reader': \\ \ \ \
+    \href{https://www.fosshub.com/Evince.html}{\texttt{Evince}},
+    \href{https://okular.kde.org/}{\texttt{Okular}},
+    \href{https://www.sumatrapdfreader.org/}{\texttt{SumatraPDF}}, ...
   \item or add watch: \\ \ \ \ {\footnotesize \mintinline{python}{mg.render(mg.get_call_stack_vscode(), 'my_graph.png')}}
   \end{itemize}
 \end{frame}
@@ -226,49 +229,37 @@ Sometimes we want this, but when we don't we have to \textbf{make a copy} so tha
   \item add line where you want to graph: \\
     \ \ \ {\footnotesize \mintinline{python}{mg.show(mg.get_call_stack())}}\\
     \ \ \ {\footnotesize \mintinline{python}{mg.render(mg.get_call_stack(), 'my_graph.png')}}\\
-  \item add parameter to block for \texttt{<Enter>} key press:\\
-    \ \ \ {\footnotesize \mintinline{python}{block=True}}
-  \item see \href{https://pypi.org/project/memory-graph/}{\texttt{memory\_graph}} docs for examples
+  \item to graph and block with: Press \texttt{<Enter>} to continue...\\
+    \ \ \ {\footnotesize \mintinline{python}{mg.block(mg.show, mg.get_call_stack())}}\\
+    \ \ \ {\footnotesize \mintinline{python}{mg.block(mg.render, mg.get_call_stack(), 'my_graph.png')}}\\
+  \item see \href{https://pypi.org/project/memory-graph/}{\texttt{memory\_graph}} docs for examples and \href{https://github.com/bterwijn/memory_graph?tab=readme-ov-file#debugging-without-debugger-tool}{\texttt{alias functions}}
   \end{itemize}
-
-  \vspace{2em}
-  
-  Aliases:
- \begin{minted}[fontsize=\small]{python}
-   from memory_graph import d, ds
-   d()  # mg.show(locals(), block=True)
-   ds() # mg.show(mg.get_call_stack(), block=True)
- \end{minted}
 \end{frame}
 
 
 \begin{frame}{Python Tutor}
-  \href{https://pythontutor.com/}{\texttt{Python Tutor}}\\ 
+  Alternatively use: \href{https://pythontutor.com/}{\texttt{Python Tutor}}\\
   Philip J. Guo, Associate Professor of Cognitive Science, University of California\\
   \vspace{1em}\\
   Pros:
   \begin{itemize}
   \item no installation or setup required
   \item widely known
-  \item supports multiple programming languages
-  \item can debug backwards
+  \item supports: Python, Java, C, C++, JavaScript
+  \item supports backwards debugging
   \item good graph stability over time
   \end{itemize}
   Cons: (\href{https://docs.google.com/document/d/13_Bc-l2FKMgwPx4dZb0sv7eMfYMHhRVgBRShha8kgbU/}{\texttt{Python Tutor Limitations}})
   \begin{itemize}
-  \item runs single file in a webbrower
-  \item limited program: size, runtime, memory usage
+  \item only runs single file in a webbrowser
+  \item limited program: size, runtime, memory use
   \item can only import standard library modules
   \item no reading/writing files or command-line arguments
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Example: Recursion}
-  factorial
-  power\_set
-\end{frame}
-
 \begin{frame}{Exercise}
+  mutability.zip
   mental model
 \end{frame}
 

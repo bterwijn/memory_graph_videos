@@ -1,11 +1,11 @@
 import memory_graph
-import party_schedule
+import band_schedule
 import copy
 
-# copy the initial state from party_schedule.py
-schedule    = copy.deepcopy(party_schedule.schedule)
-rockets     = copy.deepcopy(party_schedule.rockets)
-dragonflies = copy.deepcopy(party_schedule.dragonflies)
+# copy the initial state from band_schedule.py
+schedule    = copy.deepcopy(band_schedule.schedule)
+rockets     = copy.deepcopy(band_schedule.rockets)
+dragonflies = copy.deepcopy(band_schedule.dragonflies)
 
 def main():
     exercise1(schedule) # already completed
@@ -16,7 +16,7 @@ def main():
     exercise6(schedule)
     exercise7(schedule)
     exercise8(schedule)
-    party_schedule.print_schedule(schedule)
+    band_schedule.print_schedule(schedule)
 
 def exercise1(schedule):
     """

@@ -1,5 +1,5 @@
-import party_schedule
-import party_schedule_solution
+import band_schedule
+import band_schedule_solution
 import io
 import contextlib
 
@@ -14,32 +14,32 @@ except ImportError:
     print("  pip install colorama\n")
     
 exercise_functions = [
-    party_schedule.exercise1,
-    party_schedule.exercise2,
-    party_schedule.exercise3,
-    party_schedule.exercise4,
-    party_schedule.exercise5,
-    party_schedule.exercise6,
-    party_schedule.exercise7,
-    party_schedule.exercise8
+    band_schedule.exercise1,
+    band_schedule.exercise2,
+    band_schedule.exercise3,
+    band_schedule.exercise4,
+    band_schedule.exercise5,
+    band_schedule.exercise6,
+    band_schedule.exercise7,
+    band_schedule.exercise8
 ]
 
 solution_functions = [
-    party_schedule_solution.exercise1,
-    party_schedule_solution.exercise2,
-    party_schedule_solution.exercise3,
-    party_schedule_solution.exercise4,
-    party_schedule_solution.exercise5,
-    party_schedule_solution.exercise6,
-    party_schedule_solution.exercise7,
-    party_schedule_solution.exercise8
+    band_schedule_solution.exercise1,
+    band_schedule_solution.exercise2,
+    band_schedule_solution.exercise3,
+    band_schedule_solution.exercise4,
+    band_schedule_solution.exercise5,
+    band_schedule_solution.exercise6,
+    band_schedule_solution.exercise7,
+    band_schedule_solution.exercise8
 ]
 
 def main():
     if colorama_is_installed:
         colorama.init()
-    schedule1 = party_schedule.schedule
-    schedule2 = party_schedule_solution.schedule
+    schedule1 = band_schedule.schedule
+    schedule2 = band_schedule_solution.schedule
     all_correct = True
     for i in range(0,len(exercise_functions)):
         print(f'=== exercise{i+1}', end='')
@@ -60,7 +60,7 @@ def main():
 def schedule_to_string(schedule):
     strbuf = io.StringIO()
     with contextlib.redirect_stdout(strbuf):
-        party_schedule.print_schedule(schedule)
+        band_schedule.print_schedule(schedule)
     return strbuf.getvalue()
 
 def print_error_message(str1, str2):
