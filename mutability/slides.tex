@@ -49,34 +49,33 @@
     \titlepage
 \end{frame}
 
-\begin{frame}{Content}
+%% \begin{frame}{Content}
+%%   We will cover these \href{https://docs.python.org/3/reference/datamodel.html}{\texttt{Python Data Model}} topics:
+%%   \begin{itemize}
+%%   \item Mutability of Types
+%%   \item References to Values
+%%   \item Coping Values
+%%   \end{itemize}
 
-  We will cover these \href{https://docs.python.org/3/reference/datamodel.html}{\texttt{Python Data Model}} topics:
-  \begin{itemize}
-  \item Mutability of Types
-  \item References to Values
-  \item Coping Values
-  \end{itemize}
-
-  \vspace{2em}
+%%   \vspace{2em}
   
-  These concepts are fundamental to Python programming.
-  \begin{itemize}
-    \item without a solid understanding you cannot avoid certain bugs
-  \end{itemize}
+%%   These concepts are fundamental to Python programming.
+%%   \begin{itemize}
+%%     \item without a solid understanding you cannot avoid certain bugs
+%%   \end{itemize}
 
-  \vspace{2em}
+%%   \vspace{2em}
   
-  We will use visualization tools to help build a solid understanding:
-  \begin{itemize}
-  \item \href{https://pypi.org/project/memory-graph/}{\texttt{memory\_graph}}
-  \item \href{https://pythontutor.com/}{\texttt{Python Tutor}}
-  \end{itemize}
+%%   We will use visualization tools to help build a solid understanding:
+%%   \begin{itemize}
+%%   \item \href{https://pypi.org/project/memory-graph/}{\texttt{memory\_graph}}
+%%   \item \href{https://pythontutor.com/}{\texttt{Python Tutor}}
+%%   \end{itemize}
 
-  \vspace{2em}
+%%   \vspace{2em}
 
-  We finish with an exercise with which you can test your understanding.
-\end{frame}
+%%   We finish with an exercise with which you can test your understanding.
+%% \end{frame}
 
 
 \begin{frame}{Immutable and Mutable Types}
@@ -89,7 +88,7 @@
   \textbf{Immutable} Types: \texttt{bool}, \texttt{int}, \texttt{float}, \texttt{complex}, \texttt{str}, \texttt{tuple}, \texttt{bytes}, \texttt{frozenset} \\
   
   \vspace{-0.8em}
-  A value of an immutable type \textbf{cannot} be changed in place. \\
+  A value of an immutable type \textbf{cannot} be mutated in place. \\
   Therefore, \textbf{a} copy is made when you change it. \\
   
   \vspace{2.0em}
@@ -97,15 +96,12 @@
   \textbf{Mutable} Types: \texttt{list}, \texttt{set}, \texttt{dict}, \texttt{classes}, \dots (most other types) \\
   
   \vspace{-0.8em}
-  A value of a mutable type \textbf{can} be changed in place. \\
+  A value of a mutable type \textbf{can} be mutated in place. \\
   Therefore, \textbf{no} copy is made when you change it.
 \end{frame}
 
-\begin{frame}{Mutable/Immutable Rational}
-  One practical reason for the distinction between mutable and immutable types:
-
-  \vspace{1.6em}
-  
+\begin{frame}{Rational behind Mutable and Immutable types}
+ 
   \textbf{Mutable} Types: \texttt{list}, \texttt{set}, \texttt{dict}, \texttt{classes}, \dots (most other types)
   \begin{itemize}
   \item values need to change often
@@ -113,25 +109,17 @@
   \end{itemize}
   Therefore, inefficient to copy a value each time we change it.
   
-  \vspace{1.6em}
+  \vspace{2em}
   
   \textbf{Immutable} Types: \texttt{bool}, \texttt{int}, \texttt{float}, \texttt{complex}, \texttt{str}, \texttt{tuple}, \texttt{bytes}, \texttt{frozenset}
   \begin{itemize}
-  \item values need to change less often
+  \item values generally don't need to as much
   \item or values are small
   \end{itemize}
   Therefore, automatic copy is less of a concern.
 
-  \vspace{1.6em}
+  \vspace{2em}
   
-  Another more technical reason why having immutable types is beneficial:
-  \begin{itemize}
-  \item a value of an immutable type cannot mutate in place
-    \begin{itemize}
-    \item therefore, its hash value never changes
-    \item therefore, it can be safely used as a key in a \texttt{set} or \texttt{dict}
-    \end{itemize}
-  \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -201,36 +189,9 @@ Sometimes we want this, but when we don't we have to \textbf{make a copy} so tha
   \end{columns}
 \end{frame}
 
-\begin{frame}[fragile]
-  \frametitle{Function Calls}
-  A function called with a \textbf{mutable} value might change that value.
-  \begin{itemize}
-  \item If you don't want that, make a copy.
-  \end{itemize}
-
-  \begin{columns}
-    \column{0.4\textwidth}
-    \begin{minted}[fontsize=\small]{python}
-      def add_one(a, b, c):
-         c = c.copy() # or here?
-         a += [1]
-         b += (1,)
-         c += [1]
-         
-      a = [4, 3, 2]
-      b = (4, 3, 2)
-      c = [4, 3, 2]
-      add_one(a, b, c)
-    \end{minted}
-    \column{0.6\textwidth}
-    \begin{center}\includegraphics[width=0.9\textwidth]{figures/function_call.png}\end{center}
-  \end{columns}
-\end{frame}
-
-
 \begin{frame}{memory\_graph Debugger Setup}
   \vspace{-1em}
-  memory\_graph Debugger Setup:
+  Debugger Setup:
   \begin{itemize}
   \item install \href{https://pypi.org/project/memory-graph/}{\texttt{memory\_graph}} and \href{https://graphviz.org/download/}{\texttt{Graphviz}}
   \item open Python source file in Visual Studio Code
@@ -242,7 +203,7 @@ Sometimes we want this, but when we don't we have to \textbf{make a copy} so tha
   
   \vspace{1.5em}
   
-  Problem with Adobe Acrobat Reader that blocks updates to the PDF file:
+  Adobe Acrobat Reader Problem: it blocks updates to the PDF file:
   \begin{itemize}
   \item install non-blocking PDF reader as your 'Default PDF Reader': \\ \ \ \
     \href{https://www.fosshub.com/Evince.html}{\texttt{Evince}},
@@ -255,7 +216,7 @@ Sometimes we want this, but when we don't we have to \textbf{make a copy} so tha
 \end{frame}
 
 \begin{frame}[fragile]\frametitle{memory\_graph Non-Debugger Setup}
-  memory\_graph Non-Debugger Setup:
+  Non-Debugger Setup:
   \begin{itemize}
   \item install \href{https://pypi.org/project/memory-graph/}{\texttt{memory\_graph}} and \href{https://graphviz.org/download/}{\texttt{Graphviz}}
   \item open Python source file in any editor
@@ -271,26 +232,26 @@ Sometimes we want this, but when we don't we have to \textbf{make a copy} so tha
 \end{frame}
 
 
-\begin{frame}{Python Tutor}
-  Alternatively use: \href{https://pythontutor.com/}{\texttt{Python Tutor}}\\
-  {\small Dr. Philip J. Guo, Associate Professor of Cognitive Science, University of California}
-  \vspace{1em}\\
-  Pros:
-  \begin{itemize}
-  \item no installation or setup required
-  \item widely known
-  \item supports: Python, Java, C, C++, JavaScript
-  \item supports backwards debugging
-  \item good graph stability over time
-  \end{itemize}
-  Cons: (\href{https://docs.google.com/document/d/13_Bc-l2FKMgwPx4dZb0sv7eMfYMHhRVgBRShha8kgbU/}{\texttt{Python Tutor Limitations}})
-  \begin{itemize}
-  \item only runs single file in a webbrowser
-  \item limited program: size, runtime, memory use
-  \item can only import standard library modules
-  \item no reading/writing files or command-line arguments
-  \end{itemize}
-\end{frame}
+%% \begin{frame}{Python Tutor}
+%%   Alternatively use: \href{https://pythontutor.com/}{\texttt{Python Tutor}}\\
+%%   {\small Dr. Philip J. Guo, Associate Professor of Cognitive Science, University of California}
+%%   \vspace{1em}\\
+%%   Pros:
+%%   \begin{itemize}
+%%   \item no installation or setup required
+%%   \item widely known
+%%   \item supports: Python, Java, C, C++, JavaScript
+%%   \item supports backwards debugging
+%%   \item good graph stability over time
+%%   \end{itemize}
+%%   Cons: (\href{https://docs.google.com/document/d/13_Bc-l2FKMgwPx4dZb0sv7eMfYMHhRVgBRShha8kgbU/}{\texttt{Python Tutor Limitations}})
+%%   \begin{itemize}
+%%   \item only runs single file in a webbrowser
+%%   \item limited program: size, runtime, memory use
+%%   \item can only import standard library modules
+%%   \item no reading/writing files or command-line arguments
+%%   \end{itemize}
+%% \end{frame}
 
 \begin{frame}{Exercise}
   \begin{itemize}
