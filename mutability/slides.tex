@@ -38,7 +38,7 @@
 
 \usepackage{minted}
 
-\title{Python Mutability Visually Explained Using memory\_graph}
+\title{Python Mutability Visually Explained Using `memory\_graph'}
 \author{Bas Terwijn}
 \titlegraphic{\includegraphics[width=0.6\textwidth]{figures/uva.png}}
 \date{}
@@ -113,7 +113,7 @@
   
   \textbf{Immutable} Types: \texttt{bool}, \texttt{int}, \texttt{float}, \texttt{complex}, \texttt{str}, \texttt{tuple}, \texttt{bytes}, \texttt{frozenset}
   \begin{itemize}
-  \item values generally don't need to as much
+  \item values generally don't need to change as much
   \item or values are small
   \end{itemize}
   Therefore, automatic copy is less of a concern.
@@ -201,17 +201,17 @@ Sometimes we want this, but when we don't we have to \textbf{make a copy} so tha
   \item manually open file 'my\_graph.pdf', resize window,  and set 'Always on Top'
   \end{itemize}
   
-  \vspace{1.5em}
+  \vspace{1.8em}
   
-  Adobe Acrobat Reader Problem: it blocks updates to the PDF file:
+  Adobe Acrobat Reader Problem: it blocks updates to an opened PDF file
   \begin{itemize}
   \item install non-blocking PDF reader as your 'Default PDF Reader': \\ \ \ \
     \href{https://www.fosshub.com/Evince.html}{\texttt{Evince}},
     \href{https://okular.kde.org/}{\texttt{Okular}},
     \href{https://www.sumatrapdfreader.org/}{\texttt{SumatraPDF}}, ...
-  \item or add watch: \\
-\ \ \ {\footnotesize \mintinline{python}{mg.render(mg.get_call_stack_vscode(), 'my_graph.png')}} \\
-\ \ \ {\footnotesize \mintinline{python}{mg.render(mg.get_call_stack_vscode(), 'my_graph.svg')}}
+  \item or instead add watch: \\
+\ \ \ {\footnotesize \mintinline{python}{mg.render(mg.get_call_stack_vscode(), 'my_graph.svg')}} \\
+\ \ \ {\footnotesize \mintinline{python}{mg.render(mg.get_call_stack_vscode(), 'my_graph.png')}}
   \end{itemize}
 \end{frame}
 
