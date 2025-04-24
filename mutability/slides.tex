@@ -83,13 +83,13 @@
     Python has two distinct categories of types: Immutable, Mutable
   \end{block}
   
-  \vspace{2em}
+  \vspace{2.4em}
   
   \textbf{Immutable} Types: \texttt{bool}, \texttt{int}, \texttt{float}, \texttt{complex}, \texttt{str}, \texttt{tuple}, \texttt{bytes}, \texttt{frozenset} \\
   
   \vspace{-0.8em}
   A value of an immutable type \textbf{cannot} be mutated in place. \\
-  Therefore, \textbf{a} copy is made when you change it. \\
+  \textbf{A} copy is made when you change it. \\
   
   \vspace{2.0em}
   
@@ -97,7 +97,7 @@
   
   \vspace{-0.8em}
   A value of a mutable type \textbf{can} be mutated in place. \\
-  Therefore, \textbf{no} copy is made when you change it.
+  \textbf{No} copy is made when you change it.
 \end{frame}
 
 \begin{frame}{Rational behind Mutable and Immutable types}
@@ -197,7 +197,7 @@ Sometimes we want this but other times we don't. Then we have to \textbf{make a 
   \item open Python source file in Visual Studio Code
   \item add line: \\ \ \ \ {\footnotesize \mintinline{python}{import memory_graph as mg}}
   \item set a breakpoint and start the \href{https://code.visualstudio.com/docs/python/debugging}{\texttt{vscode debugger}}
-  \item add watch: \\ \ \ \ {\footnotesize \mintinline{python}{mg.render(mg.get_call_stack_vscode(), 'my_graph.pdf')}}
+  \item add watch: \\ \ \ \ {\footnotesize \mintinline{python}{mg.render(mg.stack_vscode(), 'debug.pdf')}}
   \item manually open file 'my\_graph.pdf', resize window,  and set 'Always on Top'
   \end{itemize}
   
@@ -210,8 +210,8 @@ Sometimes we want this but other times we don't. Then we have to \textbf{make a 
     \href{https://okular.kde.org/}{\texttt{Okular}},
     \href{https://www.sumatrapdfreader.org/}{\texttt{SumatraPDF}}, ...
   \item or instead add watch: \\
-\ \ \ {\footnotesize \mintinline{python}{mg.render(mg.get_call_stack_vscode(), 'my_graph.svg')}} \\
-\ \ \ {\footnotesize \mintinline{python}{mg.render(mg.get_call_stack_vscode(), 'my_graph.png')}}
+\ \ \ {\footnotesize \mintinline{python}{mg.render(mg.stack_vscode(), 'debug.svg')}} \\
+\ \ \ {\footnotesize \mintinline{python}{mg.render(mg.stack_vscode(), 'debug.png')}}
   \end{itemize}
 \end{frame}
 
@@ -222,11 +222,11 @@ Sometimes we want this but other times we don't. Then we have to \textbf{make a 
   \item open Python source file in any editor
   \item add line: \\ \ \ \ {\footnotesize \mintinline{python}{import memory_graph as mg}}
   \item add line where you want to graph: \\
-    \ \ \ {\footnotesize \mintinline{python}{mg.show(mg.get_call_stack())}}\\
-    \ \ \ {\footnotesize \mintinline{python}{mg.render(mg.get_call_stack(), 'my_graph.png')}}\\
+    \ \ \ {\footnotesize \mintinline{python}{mg.show(mg.stack())}}\\
+    \ \ \ {\footnotesize \mintinline{python}{mg.render(mg.stack(), 'stack.pdf')}}\\
   \item to graph and block with: Press \texttt{<Enter>} to continue...\\
-    \ \ \ {\footnotesize \mintinline{python}{mg.block(mg.show, mg.get_call_stack())}}\\
-    \ \ \ {\footnotesize \mintinline{python}{mg.block(mg.render, mg.get_call_stack(), 'my_graph.png')}}\\
+    \ \ \ {\footnotesize \mintinline{python}{mg.block(mg.show, mg.stack())}}\\
+    \ \ \ {\footnotesize \mintinline{python}{mg.block(mg.render, mg.stack(), 'stack.pdf')}}\\
   \item see \href{https://pypi.org/project/memory-graph/}{\texttt{memory\_graph}} docs for examples and shorthand \href{https://github.com/bterwijn/memory_graph?tab=readme-ov-file#debugging-without-debugger-tool}{\texttt{alias functions}}
   \end{itemize}
 \end{frame}
