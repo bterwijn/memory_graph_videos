@@ -1,7 +1,7 @@
 TEX := $(wildcard *.tex)
 PDF := $(TEX:.tex=.pdf)
 SRC := $(shell find ./src -type f -name "*.py")
-EXERCISES := $(shell find ./exercises -type f -name "*.py")
+EXERCISE := $(shell find ./exercise -type f -name "*.py")
 TARGETS := $(PDF) mutability.zip
 
 all: $(TARGETS)
@@ -11,10 +11,10 @@ all: $(TARGETS)
 	pdflatex -shell-escape $<
 
 # Rule to build zip file
-mutability.zip : $(PDF) $(SRC) $(EXERCISES)
+mutability.zip : $(PDF) $(SRC) $(EXERCISE)
 	rm -rf ./mutability
 	mkdir -p ./mutability
-	cp -r $(PDF) src exercises ./mutability
+	cp -r $(PDF) src exercise ./mutability
 	zip -r ./mutability.zip ./mutability && rm -rf ./mutability
 
 # Clean up auxiliary files

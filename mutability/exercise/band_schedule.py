@@ -30,7 +30,7 @@ def exercise1(schedule):
 
 def exercise2(schedule):
     """
-    In January 2020 add rockets to week3, dragonflies to week4 amd rockets to week5.
+    In January 2020 add rockets to week3, dragonflies to week4 and rockets to week5.
     """
 
 def exercise3(schedule):
