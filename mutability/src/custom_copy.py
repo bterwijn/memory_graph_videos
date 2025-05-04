@@ -7,12 +7,13 @@ class My_Class:
         self.digits = [1, 2]
         self.letters = ['x', 'y']
 
-    def copy(self):  # custom: copies digits, shares letters
+    def custom_copy(self):
+        """ Copies 'digits' but shares 'letters'. """
         c = copy.copy(self)
         c.digits = copy.copy(self.digits)
         return c
 
 a = My_Class()
-b = a.copy()
+b = a.custom_copy()
 
 print(f'{a=}\n{b=}')
