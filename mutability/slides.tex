@@ -89,7 +89,7 @@
   
   \vspace{-0.8em}
   A value of an immutable type \textbf{cannot} be mutated in place. \\
-  \textbf{A} copy is made when you change it. \\
+  So when it is changed, \textbf{a} copy is made. \\
   
   \vspace{2.0em}
   
@@ -97,7 +97,7 @@
   
   \vspace{-0.8em}
   A value of a mutable type \textbf{can} be mutated in place. \\
-  \textbf{No} copy is made when you change it.
+  So when it is changed, \textbf{no} copy is made.
 \end{frame}
 
 \begin{frame}{Rational behind Mutable and Immutable types}
@@ -107,7 +107,7 @@
   \item values need to change often
   \item and values can be large
   \end{itemize}
-  Therefore, inefficient to copy a value each time we change it.
+  Therefore, it is inefficient to copy a value each time we change it.
   
   \vspace{3em}
   
@@ -116,7 +116,7 @@
   \item values generally don't need to change as much
   \item or values are small
   \end{itemize}
-  Therefore, automatic copy is less of a concern.
+  Therefore, an automatic copy is less of a concern.
 
   \vspace{2em}
   
@@ -160,13 +160,13 @@ Sometimes we want this but other times we don't. Then we have to \textbf{make a 
         \item \textbf{c1: Assignment,} nothing is copied, all the values are shared
         \item \textbf{c2: Shallow Copy,} only the value referenced by the first reference is copied, all the underlying values are shared
         \item \textbf{c3: Deep Copy,} all the values are copied, nothing is shared
-        \item \ \ \, \,\, \textbf{Custom Copy,} alternatively write your own copy logic
+        \item \ \ \, \,\, \textbf{Custom Copy,} alternatively write your own custom copy logic
     \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
 \frametitle{Function Calls}
-  A function called with a \textbf{mutable} value might change that value.
+  A function called with a \textbf{mutable} value can change that value.
   \begin{itemize}
   \item If you don't want that, make a copy.
   \end{itemize}
@@ -198,7 +198,7 @@ Sometimes we want this but other times we don't. Then we have to \textbf{make a 
   \item add line: \\ \ \ \ {\footnotesize \mintinline{python}{import memory_graph as mg}}
   \item set a breakpoint and start the \href{https://code.visualstudio.com/docs/python/debugging}{\texttt{vscode debugger}}
   \item add watch: \\ \ \ \ {\footnotesize \mintinline{python}{mg.render(mg.stack_vscode(), 'debug.pdf')}}
-  \item manually open file 'my\_graph.pdf', resize window,  and set 'Always on Top'
+  \item manually open file 'debug.pdf', resize window,  and set 'Always on Top'
   \end{itemize}
   
   \vspace{1.8em}
@@ -220,10 +220,10 @@ Sometimes we want this but other times we don't. Then we have to \textbf{make a 
   \item install \href{https://pypi.org/project/memory-graph/}{\texttt{memory\_graph}} and \href{https://graphviz.org/download/}{\texttt{Graphviz}}
   \item open Python source file in any editor
   \item add line: \\ \ \ \ {\footnotesize \mintinline{python}{import memory_graph as mg}}
-  \item add line where you want to graph: \\
+  \item add this line to source code where you want to graph: \\
     \ \ \ {\footnotesize \mintinline{python}{mg.show(mg.stack())}}\\
     \ \ \ {\footnotesize \mintinline{python}{mg.render(mg.stack(), 'stack.pdf')}}\\
-  \item to graph and block with: Press \texttt{<Enter>} to continue...\\
+  \item or graph and block (Press \texttt{<Enter>} to continue...) using: \\
     \ \ \ {\footnotesize \mintinline{python}{mg.block(mg.show, mg.stack())}}\\
     \ \ \ {\footnotesize \mintinline{python}{mg.block(mg.render, mg.stack(), 'stack.pdf')}}\\
   \item see \href{https://pypi.org/project/memory-graph/}{\texttt{memory\_graph}} docs for examples and shorthand \href{https://github.com/bterwijn/memory_graph?tab=readme-ov-file#debugging-without-debugger-tool}{\texttt{alias functions}}
@@ -252,15 +252,14 @@ Sometimes we want this but other times we don't. Then we have to \textbf{make a 
 %%   \end{itemize}
 %% \end{frame}
 
-\begin{frame}{Exercise}
+\begin{frame}{Exercise 'band\_schedule.py'}
   \begin{itemize}
   \item Download: \href{https://raw.githubusercontent.com/bterwijn/memory_graph_videos/refs/heads/main/mutability/mutability.zip}{\texttt{mutability.zip}}
     \begin{itemize}
     \item slides.pdf
     \item src/
-    \item exercises/
+    \item exercise/
     \end{itemize}
-  \item Exercise: band\_schedule.py
   \item Mental Model: \begin{center}\includegraphics[width=0.4\textwidth]{figures/band_schedule.png}\end{center}
   \end{itemize}
 \end{frame}
