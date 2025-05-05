@@ -1,5 +1,6 @@
 TEX := $(wildcard *.tex)
 PDF := $(TEX:.tex=.pdf)
+FIGS := $(shell find ./figures -type f -name "*.png")
 SRC := $(shell find ./src -type f -name "*.py")
 EXERCISE := $(shell find ./exercise -type f -name "*.py")
 TARGETS := $(PDF) mutability.zip
