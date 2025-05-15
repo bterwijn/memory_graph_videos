@@ -23,6 +23,6 @@ class BinTree:
                 self.larger.add(value)
 
 tree = BinTree()
-while True
+while True:
     value = random.randrange(100)
     tree.add(value)
