@@ -6,7 +6,7 @@ def custom_copy(a):
     c[1] = a[1].copy()
     return c
 
-a  = [[1,2], ['x', 'y']]
+a  = [[1, 2], ['x', 'y']]
 c1 = a
 c2 = a.copy()
 c3 = custom_copy(a)
