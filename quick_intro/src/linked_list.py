@@ -21,5 +21,5 @@ class Linked_List:
             self.next = new_node
 
 linked_list = Linked_List()
-for value in it.count():
+for value in range(100):
     linked_list.add_front(value)
