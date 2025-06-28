@@ -37,14 +37,14 @@
 }
 
 \usepackage{minted}
-\title{VS Code with 'memory\_graph'}
+\title{Python 'memory\_graph' in VS Code}
 \author{Bas Terwijn}
 \titlegraphic{
 \vspace{-2.8em} % Adjust if needed
 \makebox[\textwidth]{%
   \begin{tabular}{c c c}
     \begin{tabular}{c}
-      \includegraphics[height=0.25\textwidth]{figures/vscode_logo.png} \\
+      \includegraphics[width=0.25\textwidth]{figures/vscode_logo.png} \\
       Visual Studio Code
     \end{tabular}
     &
@@ -52,8 +52,8 @@
     \raisebox{-0.02\textwidth}{\includegraphics[height=0.06\textwidth]{figures/plus.png}}
     &
     \begin{tabular}{c}
-      \includegraphics[height=0.25\textwidth]{figures/memory_graph.png} \\
-       memory\_graph
+      \includegraphics[width=0.25\textwidth]{figures/memory_graph.png} \\
+      memory\_graph
     \end{tabular}
     \\
     \multicolumn{3}{c}{\rule{0pt}{5mm}}
@@ -81,7 +81,7 @@
     \ \ \ {\footnotesize \mintinline{python}{import memory_graph as mg}}
   \item set a breakpoint, start the \href{https://code.visualstudio.com/docs/python/debugging}{\texttt{vscode debugger}} and add watch: \\
     \ \ \ {\footnotesize \mintinline{python}{mg.render(mg.stack_vscode(), 'memory_graph.pdf')}} \\
-    \ \ \ {\footnotesize \mintinline{python}{mg.vscode_watch()}}
+    \ \ \ {\footnotesize \mintinline{python}{mg.vscode()}}
   \item manually open file 'memory\_graph.pdf',  set 'Always on Top'
   \end{enumerate}
   
@@ -93,8 +93,8 @@
     \href{https://www.sumatrapdfreader.org/}{\texttt{SumatraPDF}},
     \href{https://okular.kde.org/}{\texttt{Okular}}, ...
   \item or use a refreshing image viewer: \\
-\ \ \ {\footnotesize \mintinline{python}{mg.render(mg.stack_vscode(), 'memory_graph.svg')}} \\
-\ \ \ {\footnotesize \mintinline{python}{mg.render(mg.stack_vscode(), 'memory_graph.png')}}
+\ \ \ {\footnotesize \mintinline{python}{mg.vscode('memory_graph.svg')}} \\
+\ \ \ {\footnotesize \mintinline{python}{mg.vscode('memory_graph.png')}}
   \end{itemize}
 \end{frame}
 

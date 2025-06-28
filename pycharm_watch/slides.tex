@@ -37,14 +37,14 @@
 }
 
 \usepackage{minted}
-\title{PyCharm with 'memory\_graph'}
+\title{Python 'memory\_graph' in PyCharm}
 \author{Bas Terwijn}
 \titlegraphic{
 \vspace{-2.8em} % Adjust if needed
 \makebox[\textwidth]{%
   \begin{tabular}{c c c}
     \begin{tabular}{c}
-      \includegraphics[height=0.25\textwidth]{figures/pycharm.png} \\
+      \includegraphics[width=0.25\textwidth]{figures/pycharm.png} \\
       PyCharm
     \end{tabular}
     &
@@ -52,7 +52,7 @@
     \raisebox{-0.02\textwidth}{\includegraphics[height=0.06\textwidth]{../vscode_watch/figures/plus.png}}
     &
     \begin{tabular}{c}
-      \includegraphics[height=0.25\textwidth]{../vscode_watch/figures/memory_graph.png} \\
+      \includegraphics[width=0.25\textwidth]{../vscode_watch/figures/memory_graph.png} \\
        memory\_graph
     \end{tabular}
     \\
@@ -81,7 +81,7 @@
     \ \ \ {\footnotesize \mintinline{python}{import memory_graph as mg}}
   \item set a breakpoint, start the debugger, and add watch: \\
     \ \ \ {\footnotesize \mintinline{python}{mg.render(mg.stack_pycharm(), 'memory_graph.pdf')}} \\
-    \ \ \ {\footnotesize \mintinline{python}{mg.pycharm_watch()}}
+    \ \ \ {\footnotesize \mintinline{python}{mg.pycharm()}}
   \item manually open file 'memory\_graph.pdf',  set 'Always on Top'
   \end{enumerate}
   
@@ -93,8 +93,8 @@
     \href{https://www.sumatrapdfreader.org/}{\texttt{SumatraPDF}},
     \href{https://okular.kde.org/}{\texttt{Okular}}, ...
   \item or use a refreshing image viewer: \\
-\ \ \ {\footnotesize \mintinline{python}{mg.render(mg.stack_pycharm(), 'memory_graph.svg')}} \\
-\ \ \ {\footnotesize \mintinline{python}{mg.render(mg.stack_pycharm(), 'memory_graph.png')}}
+\ \ \ {\footnotesize \mintinline{python}{mg.pycharm('memory_graph.svg')}} \\
+\ \ \ {\footnotesize \mintinline{python}{mg.pycharm('memory_graph.png')}}
   \end{itemize}
 \end{frame}
 
