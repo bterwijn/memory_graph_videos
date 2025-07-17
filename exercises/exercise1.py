@@ -1,3 +1,4 @@
+import memory_graph as mg
 import copy
 
 mydict = {'a': [100], 'b': [200], 'c': [300]}
@@ -9,3 +10,25 @@ c2['b'].append(222)
 c3['c'].append(333)
 
 print(mydict)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
