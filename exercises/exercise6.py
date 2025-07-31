@@ -1,3 +1,4 @@
+
 # Output of this Python program?
 def fun(a, b, c, d):
     a += "1"
@@ -17,3 +18,4 @@ print(a, b, c, d)
 # B) 1 [] () {4}
 # C)  [2] (3,) {}
 # D)  [2] () {4}
+
