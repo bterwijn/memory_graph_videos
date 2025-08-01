@@ -1,5 +1,5 @@
 
-# What is the output of this Python Program?
+# Output of this Python Program?
 import copy
 
 class Coord:
