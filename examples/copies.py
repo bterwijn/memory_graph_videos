@@ -13,5 +13,5 @@ c3 = custom_copy(a)
 c4 = copy.deepcopy(a)
 
 a[1][0] = 9999
-print(f'{c1=}\n{c2=}\n{c3=}\n{c4=}\n')
+print(f'{c1=}\n{c2=}\n{c3=}\n{c4=}')
 
