@@ -14,4 +14,4 @@
 | 10 | <a href="exercise10.png"><img src="exercise10.png" width="450"></a> | [exercise10.py](exercise10.py) | [exercise10.gif](exercise10.gif) |
 | 11 | <a href="exercise11.png"><img src="exercise11.png" width="450"></a> | [exercise11.py](exercise11.py) | [exercise11.gif](exercise11.gif) |
 | 12 | <a href="exercise12.png"><img src="exercise12.png" width="450"></a> | [exercise12.py](exercise12.py) | [exercise12.gif](exercise12.gif) |
-| 13 | <a href="exercise13.png"><img src="exercise13.png" width="450"></a> | [exercise12.py](exercise13.py) | [exercise12.gif](exercise13.gif) |
+| 13 | <a href="exercise13.png"><img src="exercise13.png" width="450"></a> | [exercise13.py](exercise13.py) | [exercise13.gif](exercise13.gif) |
