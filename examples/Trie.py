@@ -1,4 +1,4 @@
-import memory_graph as mg
+import memory_graph as mg # see install: https://pypi.org/project/memory-graph/
 
 class TrieNode:
     def __init__(self):
@@ -39,5 +39,5 @@ for word in ['cat', 'car', 'care', 'can', 'caps', 'cup', 'cut', 'dog']:
     trie.insert(word)
 
 completions = trie.complete('ca')
-    
-mg.sl()
+print(completions)
+mg.sl() # show local variables
