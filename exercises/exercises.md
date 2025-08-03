@@ -1,7 +1,7 @@
 # Memory Graph Exercises
 
-| Exercise | Difficulty | Image | Code | Solution |
-|----------|------------|-------|------|----------|
+| Exercise | Stars | Image | Code | Solution |
+|----------|-------|-------|------|----------|
 | 1  | \*\*      |<a href="exercise1.png"><img src="exercise1.png" width="500"></a> | [exercise1.py](exercise1.py) | [exercise1.gif](exercise1.gif) |
 | 2  | \*\*      |<a href="exercise2.png"><img src="exercise2.png" width="500"></a> | [exercise2.py](exercise2.py) | [exercise2.gif](exercise2.gif) |
 | 3  | \*        |<a href="exercise3.png"><img src="exercise3.png" width="500"></a> | [exercise3.py](exercise3.py) | [exercise3.gif](exercise3.gif) |
