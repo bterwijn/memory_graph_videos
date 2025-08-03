@@ -4,12 +4,12 @@ def fun(a, b, c, d):
     a += [1, 2]
     b += (1, 2)
     c |= {1, 2}
-    d |= frozenset([1, 2])
+    d |= {1, 2}
 
 a = [1]
 b = (1,)
-c = set([1])
-d = frozenset([1])
+c = {1}
+d = frozenset({1})
 fun(a, b, c, d)
 
 print(a, b, c, d)
