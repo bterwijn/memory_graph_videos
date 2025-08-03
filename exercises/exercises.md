@@ -5,8 +5,8 @@
 | 1  | \*\*      |<a href="exercise1.png"><img src="exercise1.png" width="500"></a> | [exercise1.py](exercise1.py) | [exercise1.gif](exercise1.gif) |
 | 2  | \*\*      |<a href="exercise2.png"><img src="exercise2.png" width="500"></a> | [exercise2.py](exercise2.py) | [exercise2.gif](exercise2.gif) |
 | 3  | \*        |<a href="exercise3.png"><img src="exercise3.png" width="500"></a> | [exercise3.py](exercise3.py) | [exercise3.gif](exercise3.gif) |
-| 4  | \*\*\*    |<a href="exercise4.png"><img src="exercise4.png" width="500"></a> | [exercise4.py](exercise4.py) | [exercise4.gif](exercise4.gif) |
-| 5  | \*        |<a href="exercise5.png"><img src="exercise5.png" width="500"></a> | [exercise5.py](exercise5.py) | [exercise5.gif](exercise5.gif) |
+| 4  | \*        |<a href="exercise4.png"><img src="exercise4.png" width="500"></a> | [exercise4.py](exercise4.py) | [exercise4.gif](exercise4.gif) |
+| 5  | \*\*\*    |<a href="exercise5.png"><img src="exercise5.png" width="500"></a> | [exercise5.py](exercise5.py) | [exercise5.gif](exercise5.gif) |
 | 6  | \*        |<a href="exercise6.png"><img src="exercise6.png" width="500"></a> | [exercise6.py](exercise6.py) | [exercise6.gif](exercise6.gif) |
 | 7  | \*\*      |<a href="exercise7.png"><img src="exercise7.png" width="500"></a> | [exercise7.py](exercise7.py) | [exercise7.gif](exercise7.gif) |
 | 8  | \*\*      |<a href="exercise8.png"><img src="exercise8.png" width="500"></a> | [exercise8.py](exercise8.py) | [exercise8.gif](exercise8.gif) |
