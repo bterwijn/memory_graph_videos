@@ -10,7 +10,7 @@
 | 6  | \*        |<a href="exercise6.png"><img src="exercise6.png" width="500"></a> | [exercise6.py](exercise6.py) | [exercise6.gif](exercise6.gif) |
 | 7  | \*\*      |<a href="exercise7.png"><img src="exercise7.png" width="500"></a> | [exercise7.py](exercise7.py) | [exercise7.gif](exercise7.gif) |
 | 8  | \*\*      |<a href="exercise8.png"><img src="exercise8.png" width="500"></a> | [exercise8.py](exercise8.py) | [exercise8.gif](exercise8.gif) |
-| 9  | \*\*      |<a href="exercise9.png"><img src="exercise9.png" width="500"></a> | [exercise9.py](exercise9.py) | [exercise9.gif](exercise9.gif) |
+| 9  | \*\*\*    |<a href="exercise9.png"><img src="exercise9.png" width="500"></a> | [exercise9.py](exercise9.py) | [exercise9.gif](exercise9.gif) |
 | 10 | \*\*      |<a href="exercise10.png"><img src="exercise10.png" width="500"></a> | [exercise10.py](exercise10.py) | [exercise10.gif](exercise10.gif) |
 | 11 | \*\*      |<a href="exercise11.png"><img src="exercise11.png" width="500"></a> | [exercise11.py](exercise11.py) | [exercise11.gif](exercise11.gif) |
 | 12 | \*        |<a href="exercise12.png"><img src="exercise12.png" width="500"></a> | [exercise12.py](exercise12.py) | [exercise12.gif](exercise12.gif) |
