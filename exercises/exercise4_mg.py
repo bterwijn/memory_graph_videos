@@ -1,6 +1,5 @@
-import memory_graph as mg
-# show separate nodes for float and str
-mg.config.embedded_types -= {float, str}
+# show separate node for float and str
+mg.embedded_types -= {float, str} 
 
 # Output of this Python program?
 float1 = 0.0  ; float2 = float1

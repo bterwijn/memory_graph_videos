@@ -63,11 +63,16 @@
 \end{frame}
 
 \begin{frame}{Topics}
+
+  Memory\_Graph, a modern version of Python Tutor \\
+  \vspace{1em} \\
+  Topics:
   \begin{enumerate}
     \item Explain Python Data Model (to demo Memory\_Graph)
     \item Data Model Exercises
     \item Data Structure examples
     \item Integration in IDEs
+    \item Debugging in Production Code
   \end{enumerate}
 \end{frame}
 
@@ -96,13 +101,13 @@
 
 \begin{frame}[fragile]{Mutability, live in ipython}
   \begin{minted}[fontsize=\small]{python}
-  a = (4, 3, 2)  # tuple, immutable
-  b = a
-  b += (1,)
+  tuple1 = (4, 3, 2)  # tuple, immutable
+  tuple2 = tuple1
+  tuple2 += (1,)
 
-  c = [4, 3, 2]  # list, mutable
-  d = c
-  d += [1]
+  list1 = [4, 3, 2]   # list, mutable
+  list2 = list1
+  list2 += [1]
   \end{minted}
 \end{frame}
 
@@ -122,19 +127,60 @@
 \end{frame}
 
 \begin{frame}{Data Model Exercises}
-  \href{https://memory-graph.com/#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph_videos/refs/heads/main/exercises/exercise9.py}{test}
-  % \href{https://memory-graph.com/#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph_videos/refs/heads/main/exercises/exercise9.py}{Exercise 9}
-  %\begin{enumerate}
-  % \item \href{https://memory-graph.com/#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph_videos/refs/heads/main/exercises/exercise9.py}{Exercise 9}
-  % \item \href{https://memory-graph.com/#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph_videos/refs/heads/main/exercises/exercise8.py}{Exercise 8}
-  % \item \href{https://memory-graph.com/#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph_videos/refs/heads/main/exercises/exercise5.py}{Exercise 5}
-  %\item test
-  %\end{enumerate}
-
-
+  Multiple Choice Exercises, limited time, your best guess please:
+  \begin{enumerate}
+  \item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph_videos/refs/heads/main/exercises/exercise8.py}{Exercise 8}
+  \item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph_videos/refs/heads/main/exercises/exercise9.py}{Exercise 9}
+  \item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph_videos/refs/heads/main/exercises/exercise5.py}{Exercise 5}
+  \end{enumerate}
 \end{frame}
 
 
+\begin{frame}{Data Structure Example}
+Larger Data Structures:
+\begin{enumerate}
+\item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/linked_list.py&timestep=0.2&play}{Linked List}
+\item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/bin_tree.py&timestep=0.2&play}{Binary Tree}
+\item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/hash_set.py&timestep=0.2&play}{Hash Set}
+\end{enumerate}
+\end{frame}
 
+\begin{frame}{Integration in IDEs}
+  IDE Integration:
+  \begin{itemize}
+    \item Visual Studio Code (demo)
+    \item Cursor AI
+    \item PyCharm
+    \item ...
+  \end{itemize}
+
+  Environments:
+  \begin{itemize}
+    \item ipyton
+    \item Jupyter Notebook
+    \item Google Colab
+    \item Marimo
+  \end{itemize}
+
+  Extensions for:
+  \begin{itemize}
+    \item Numpy
+    \item Pandas
+    \item PyTorch
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Debugging in Production Code}
+  Debugging Aid for Production Code?
+  \begin{itemize}
+  \item don't debug-print, but memory\_graph your data
+  \item control the \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/config.py}{size of the graph}
+  \item future work: interactive graph viewer (similar to \href{https://github.com/jrfonseca/xdot.py}{xdot})
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{The End}
+  questions?
+\end{frame}
 
 \end{document}
