@@ -16,7 +16,7 @@ print(mydict)
 # B) {1: [100], 2: [], 3: []}
 # C) {1: [100], 2: [200], 3: []}
 # D) {1: [100], 2: [200], 3: [300]}
-
+# see "Solution" for correct answer
 
 
 
