@@ -1,5 +1,5 @@
 # show separate node for float and str
-mg.embedded_types -= {float, str} 
+mg.config.embedded_types -= {float, str} 
 
 # Output of this Python program?
 float1 = 0.0  ; float2 = float1
