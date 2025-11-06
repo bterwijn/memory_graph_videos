@@ -18,4 +18,4 @@ print(a, b, c, d)
 # B) [1, 1, 2] (1,) {1, 1, 2} frozenset({1})
 # C) [1, 1, 2] (1, 1, 2) {1, 2} frozenset({1, 2})
 # D) [1, 1, 2] (1, 1, 2) {1, 1, 2} frozenset({1, 1, 2})
-
+# See "Solution" for the correct answer
