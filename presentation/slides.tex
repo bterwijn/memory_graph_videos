@@ -219,6 +219,8 @@ Sorting (Algorithm) Examples:
 \end{frame}
 
 \begin{frame}[fragile]{Three Usage Modes: 2 Add Debug Graph Statements}
+  Normal Python code.\\
+  \\
   Quickly add "debug graph statements" where you want to better understand your code (similar to debug print statements):
   \begin{enumerate}
     \item add \mintinline{python}{import memory_graph as mg}
@@ -228,7 +230,6 @@ Sorting (Algorithm) Examples:
   \listfile[fontsize=\scriptsize,baselinestretch=1.4]{src/my\string_list.py}
 \end{frame}
 
-
 \begin{frame}{Three Usage Modes: 3 Integrated in IDE/enviroment}
   IDE Integration:
   \begin{itemize}
@@ -237,7 +238,7 @@ Sorting (Algorithm) Examples:
     \item PyCharm
     \item ...
   \end{itemize}
-
+  \vspace{1em}
   Environments:
   \begin{itemize}
     \item ipyton
@@ -247,13 +248,42 @@ Sorting (Algorithm) Examples:
   \end{itemize}
 \end{frame}
 
+\begin{frame}[fragile]{How memory\_graph works, simplified}
+  \begin{figure}
+    \centering
+    \includegraphics[width=.8\textwidth]{figures/memory_graph_flow}  
+  \end{figure}
+  Memory\_Graph is open source, see source for details.
+\end{frame}
+
+\begin{frame}{Memory\_Graph Configuration}
+  Control what is shown in the graph and how:
+  \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/config.py}{Configuration Examples}
+\end{frame}
+  
+
 \begin{frame}{Debugging in Production Code}
-  Debugging Aid for Production Code?
-  \begin{itemize}
-  \item don't debug-print, but memory\_graph your data
-  \item control the \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/config.py}{size of the graph}
-  \item future work: interactive graph viewer (similar to \href{https://github.com/jrfonseca/xdot.py}{xdot})
-  \end{itemize}
+  \begin{columns}[T]
+    \begin{column}[T]{0.75\textwidth}
+      Debugging Aid for Production Code?
+      \begin{itemize}
+      \item don't debug-print, but memory\_graph your data:
+      \end{itemize}
+
+      \vspace{4em}
+      Production Code: But graph gets too big
+      \begin{itemize}
+      \item control the size of the graph programmatically (config)
+      \item future work: interactive graph viewer (similar to \href{https://github.com/jrfonseca/xdot.py}{xdot})
+      \end{itemize}
+
+    \end{column}
+    \begin{column}[T]{0.2\textwidth}
+      \begin{figure}[t]
+        \includegraphics[width=0.9\textwidth]{figures/mutable.png}
+      \end{figure}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}{The End}
