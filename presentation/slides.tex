@@ -42,6 +42,24 @@
 % enable minted support and breakable boxes
 % cbuselibrary{minted,skins,breakable}
 
+\newcommand{\listfile}[2][]{
+  \begin{tcolorbox}[
+      title=#2,
+      fonttitle=\tiny,
+      boxsep=0pt,
+      top=2pt,
+      bottom=2pt,
+      left=1pt,
+      right=0pt,
+      toptitle=0mm,
+      bottomtitle=0mm,
+      halign title=center,
+      box align = center,
+      nobeforeafter]
+      \inputminted[#1]{python}{#2}\end{tcolorbox}
+}
+
+
 \title{Memory\_Graph, a Python Teaching Tool and Debugger Aid}
 \author{Bas Terwijn}
 \titlegraphic{
@@ -66,15 +84,18 @@
 \end{frame}
 
 \begin{frame}{Topics}
-
+  Teaching Tool: students learn right mental model for Python data \\
+  Debugging Aid: students fix bugs after visualizing/understanding data \\
+  \\
   Memory\_Graph, a modern version of Python Tutor \\
-  \vspace{1em} \\
+  \\
   Topics:
   \begin{enumerate}
     \item Explain Python Data Model (to demo Memory\_Graph)
     \item Data Model Exercises
-    \item Data Structure examples
-    \item Integration in IDEs
+    \item Code Examples
+    \item Three Usage Modes
+    \item Configuration
     \item Debugging in Production Code
   \end{enumerate}
 \end{frame}
@@ -136,24 +157,80 @@
 
 \begin{frame}{Data Model Exercises}
   Multiple Choice Exercises, limited time, your best guess please:
-  \begin{enumerate}
+  \begin{itemize}
   \item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph_videos/refs/heads/main/exercises/exercise8.py}{Exercise 8}
   \item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph_videos/refs/heads/main/exercises/exercise9.py}{Exercise 9}
   \item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph_videos/refs/heads/main/exercises/exercise5.py}{Exercise 5}
-  \end{enumerate}
+  \end{itemize}
 \end{frame}
 
+\begin{frame}[fragile]{Recursion Example}
+\begin{verbatim}
+factorial(n) = n * factorial(n-1)     if n > 0
+             = 1                      otherwise
+
+factorial(4) = 4 * factorial(3)
+             = 4 * 3 * factorial(2)
+             = 4 * 3 * 2 * factorial(1)
+             = 4 * 3 * 2 * 1 * factorial(0)
+             = 4 * 3 * 2 * 1 * 1
+             = 4 * 3 * 2 * 1
+             = 4 * 3 * 2
+             = 4 * 6
+             = 24
+\end{verbatim}
+\begin{itemize}
+\item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/factorial.py}{factorial}
+\item \href{https://invocation-tree.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/factorial.py}{factorial in Invocation Tree}
+\end{itemize}
+
+\end{frame}
 
 \begin{frame}{Data Structure Example}
 Larger Data Structures:
-\begin{enumerate}
+\begin{itemize}
 \item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/linked_list.py&timestep=0.2&play}{Linked List}
-\item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/bin_tree.py&timestep=0.2&play}{Binary Tree}
+\item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/bin_tree.py&timestep=0.2&play}{Binary Tree} (recursion)
 \item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/hash_set.py&timestep=0.2&play}{Hash Set}
-\end{enumerate}
+\end{itemize}
 \end{frame}
 
-\begin{frame}{Integration in IDEs}
+\begin{frame}{Sorting Examples}
+Sorting (Algorithm) Examples:
+\begin{itemize}
+  \item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/selection_sort.py&breakpoints=13,27&continues=1&timestep=0.2}{Selection Sort}
+  \item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/insertion_sort.py&breakpoints=13,29&continues=1&timestep=0.2}{Insertion Sort}
+  \item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/bubble_sort.py&breakpoints=29,38&continues=1&timestep=0.2}{Bubble Sort}
+  \item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/cocktail_sort.py&breakpoints=16,45&continues=1&timestep=0.2}{Cocktail Shaker Sort}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Three Usage Modes: 1 Web Debugger}
+  Memory Graph Web Debugger \\
+  Copy code to \href{https://memory-graph.com/}{memory-graph.com} and run, no installation required. \\
+  \\
+  Some limitations:
+  \begin{itemize}
+    \item Only single file.
+    \item No \mintinline{python}{input()} function (yet).
+    \item Can't read/write files.
+    \item ...
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Three Usage Modes: 2 Add Debug Graph Statements}
+  Normal Python code.\\
+  \\
+  Quickly add "debug graph statements" where you want to better understand your code (similar to debug print statements):
+  \begin{enumerate}
+    \item add \mintinline{python}{import memory_graph as mg}
+    \item add \mintinline{python}{mg.l()} alias for \mintinline{python}{mg.block(mg.show, locals())}
+  \end{enumerate}
+  \vspace{1em}
+  \listfile[fontsize=\scriptsize,baselinestretch=1.4]{src/my\string_list.py}
+\end{frame}
+
+\begin{frame}{Three Usage Modes: 3 Integrated in IDE/enviroment}
   IDE Integration:
   \begin{itemize}
     \item Visual Studio Code (demo)
@@ -161,34 +238,59 @@ Larger Data Structures:
     \item PyCharm
     \item ...
   \end{itemize}
-
+  \vspace{1em}
   Environments:
   \begin{itemize}
-    \item ipyton
+    \item ipython
     \item Jupyter Notebook
     \item Google Colab
     \item Marimo
   \end{itemize}
-
-  Extensions for:
-  \begin{itemize}
-    \item Numpy
-    \item Pandas
-    \item PyTorch
-  \end{itemize}
 \end{frame}
 
+\begin{frame}[fragile]{How memory\_graph works, simplified}
+  \begin{figure}
+    \centering
+    \includegraphics[width=.8\textwidth]{figures/memory_graph_flow}  
+  \end{figure}
+  Memory\_Graph is open source, see source for details.
+\end{frame}
+
+\begin{frame}{Memory\_Graph Configuration}
+  Control what is shown in the graph and how:
+  \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/config.py}{Configuration Examples}
+\end{frame}
+  
+
 \begin{frame}{Debugging in Production Code}
-  Debugging Aid for Production Code?
-  \begin{itemize}
-  \item don't debug-print, but memory\_graph your data
-  \item control the \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/config.py}{size of the graph}
-  \item future work: interactive graph viewer (similar to \href{https://github.com/jrfonseca/xdot.py}{xdot})
-  \end{itemize}
+  \begin{columns}[T]
+    \begin{column}[T]{0.75\textwidth}
+      Debugging Aid for Production Code?
+      \begin{itemize}
+      \item don't debug-print, but memory\_graph your data:
+      \end{itemize}
+
+      \vspace{4em}
+      Production Code: But graph gets too big
+      \begin{itemize}
+      \item control the size of the graph programmatically (config)
+      \item future work: interactive graph viewer (similar to \href{https://github.com/jrfonseca/xdot.py}{xdot})
+      \end{itemize}
+
+    \end{column}
+    \begin{column}[T]{0.2\textwidth}
+      \begin{figure}[t]
+        \includegraphics[width=0.9\textwidth]{figures/mutable.png}
+      \end{figure}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}{The End}
-  questions?
+  Thanks for your participation. \\
+  Thanks Steve Yonkeu, for the invitation. \\
+  \\
+  Any Questions?
 \end{frame}
 
 \end{document}
