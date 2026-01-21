@@ -1,6 +1,6 @@
 # Memory Graph Exercises
 
-| Exercise | Stars | Image | Code | Solution |
+| Exercise | Difficulty | Image | Code | Solution |
 |----------|-------|-------|------|----------|
 | 1  | \*\*      |<a href="exercise1.png"><img src="exercise1.png" width="500"></a> | [exercise1.py](exercise1.py) | [solution1](https://memory-graph.com/#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph_videos/refs/heads/main/exercises/exercise1.py&play) |
 | 2  | \*\*      |<a href="exercise2.png"><img src="exercise2.png" width="500"></a> | [exercise2.py](exercise2.py) | [solution2](https://memory-graph.com/#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph_videos/refs/heads/main/exercises/exercise2.py&play) |
