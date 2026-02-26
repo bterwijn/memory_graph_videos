@@ -96,7 +96,7 @@
     \item Code Examples
     \item Three Usage Modes
     \item Configuration
-    \item Debugging in Production Code
+    \item Future Work: Debugging in Production Code
   \end{enumerate}
 \end{frame}
 
@@ -162,6 +162,8 @@
   \item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph_videos/refs/heads/main/exercises/exercise9.py}{Exercise 9}
   \item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph_videos/refs/heads/main/exercises/exercise5.py}{Exercise 5}
   \end{itemize}
+  \vspace{8mm}
+  Or see \href{https://github.com/bterwijn/memory_graph_videos/blob/main/exercises/exercises.md}{more exercises}.
 \end{frame}
 
 \begin{frame}[fragile]{Recursion Example}
@@ -192,6 +194,7 @@ Larger Data Structures:
 \item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/linked_list.py&timestep=0.2&play}{Linked List}
 \item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/bin_tree.py&timestep=0.2&play}{Binary Tree} (recursion)
 \item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/hash_set.py&timestep=0.2&play}{Hash Set}
+\item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/hash_map.py&timestep=0.2&play}{Hash Map}
 \end{itemize}
 \end{frame}
 
@@ -233,12 +236,14 @@ Sorting (Algorithm) Examples:
 \begin{frame}{Three Usage Modes: 3 Integrated in IDE/enviroment}
   IDE Integration:
   \begin{itemize}
-    \item Visual Studio Code (demo)
+    \item Visual Studio Code (\href{https://raw.githubusercontent.com/bterwijn/memory_graph/main/images/vscode_copying.gif}{demo}, see \href{https://www.youtube.com/watch?v=23_bHcr7hqo}{instructions})
     \item Cursor AI
     \item PyCharm
     \item ...
   \end{itemize}
+  Works through a 'watch' now, we will be working on plugins.\\
   \vspace{1em}
+  
   Environments:
   \begin{itemize}
     \item ipython
@@ -262,14 +267,16 @@ Sorting (Algorithm) Examples:
 \end{frame}
   
 
-\begin{frame}{Debugging in Production Code}
+\begin{frame}{Future Work: Debugging in Production Code}
   \begin{columns}[T]
     \begin{column}[T]{0.75\textwidth}
       Debugging Aid for Production Code?
       \begin{itemize}
-      \item don't debug-print, but memory\_graph your data:
+      \item debug prints don't show aliasing
+      \item debugger tools don't show aliasing
       \end{itemize}
-
+      Use memory\_graph to understand your program state!
+      
       \vspace{4em}
       Production Code: But graph gets too big
       \begin{itemize}
@@ -288,7 +295,7 @@ Sorting (Algorithm) Examples:
 
 \begin{frame}{The End}
   Thanks for your participation. \\
-  Thanks Steve Yonkeu, for the invitation. \\
+  Thanks Jean-Philippe Pellet, for the invitation. \\
   \\
   Any Questions?
 \end{frame}
