@@ -84,10 +84,10 @@
 \end{frame}
 
 \begin{frame}{Topics}
-  Teaching Tool: students learn right mental model for Python data \\
+  Teaching Tool: students learn the right mental model for Python data \\
   Debugging Aid: students fix bugs after visualizing/understanding data \\
   \\
-  Memory\_Graph, a modern version of Python Tutor \\
+  Memory\_Graph, a modern version of \href{https://pythontutor.com/}{Python Tutor} (25 million users)\\
   \\
   Topics:
   \begin{enumerate}
@@ -141,7 +141,7 @@
 \end{frame}
 
 \begin{frame}[fragile]{Copying, live in Web Debugger}
-  To copy values yourself, Python has three ways:
+  To copy values yourself, Python has three options:
  \href{https://memory-graph.com/#code=import+copy%0A%0Aa+%3D+%5B+%5B1%2C+2%5D%2C+%5B%27x%27%2C+%27y%27%5D+%5D%0A%0Ac1+%3D+a++++++++++++++++%0Ac2+%3D+copy.copy%28a%29+++++%0Ac3+%3D+copy.deepcopy%28a%29+%0A%0A%23+c1%3A+assignment%2C+++nothing+is+copied%2C+everything+is+shared%0A%23+c2%3A+shallow+copy%2C+first+element+is+copied%2C+underlying+is+shared%0A%23+c3%3A+deep+copy%2C++++everything+is+copied%2C+nothing+is+shared%0A}{Copying} \\
  \vspace{1em}
 
@@ -277,12 +277,16 @@ Sorting (Algorithm) Examples:
       \end{itemize}
       Use memory\_graph to understand your program state!
       
-      \vspace{4em}
+      \vspace{2em}
       Production Code: But graph gets too big
       \begin{itemize}
       \item control the size of the graph programmatically (config)
       \item future work: interactive graph viewer (similar to \href{https://github.com/jrfonseca/xdot.py}{xdot})
       \end{itemize}
+      
+      \vspace{2em}
+      future work: other languages? \\
+      (C/C++, C\#, Java, JavaScript, Go, Rust, ...) 
 
     \end{column}
     \begin{column}[T]{0.2\textwidth}
