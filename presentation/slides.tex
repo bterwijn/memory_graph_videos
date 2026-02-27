@@ -60,7 +60,7 @@
 }
 
 
-\title{Memory\_Graph, a Python Teaching Tool and Debugger Aid}
+\title{Memory\_Graph, a Python Teaching Tool and Debugging Aid}
 \author{Bas Terwijn}
 \titlegraphic{
 \vspace{-2.8em} % Adjust this value as needed
@@ -100,7 +100,7 @@
   \end{enumerate}
 \end{frame}
 
-\begin{frame}{Python Data Mode}
+\begin{frame}{Python Data Model}
   \begin{block}{Python Types}
     Python has two distinct categories of types: Immutable, Mutable
   \end{block}
@@ -141,23 +141,31 @@
 \end{frame}
 
 \begin{frame}[fragile]{Copying, live in Web Debugger}
-  To copy values yourself, Python has three options:
- \href{https://memory-graph.com/#code=import+copy%0A%0Aa+%3D+%5B+%5B1%2C+2%5D%2C+%5B%27x%27%2C+%27y%27%5D+%5D%0A%0Ac1+%3D+a++++++++++++++++%0Ac2+%3D+copy.copy%28a%29+++++%0Ac3+%3D+copy.deepcopy%28a%29+%0A%0A%23+c1%3A+assignment%2C+++nothing+is+copied%2C+everything+is+shared%0A%23+c2%3A+shallow+copy%2C+first+element+is+copied%2C+underlying+is+shared%0A%23+c3%3A+deep+copy%2C++++everything+is+copied%2C+nothing+is+shared%0A}{Copying} \\
- \vspace{1em}
+  So, values of immutable type are copied automatically when changed, values of mutable type are not.
+  \vspace{2em}
+  
+  To copy mutable values ourself, Python has three options:
+ \href{https://memory-graph.com/#code=import%20copy%0A%0Aa%20%3D%20%5B%20%5B1%2C%202%5D%2C%20%5B'x'%2C%20'y'%5D%20%5D%0A%0Ac1%20%3D%20a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0Ac2%20%3D%20copy.copy(a)%20%20%20%20%20%23%20or%3A%20%20a.copy()%20%20list(a)%20%20a%5B%3A%5D%0Ac3%20%3D%20copy.deepcopy(a)%20%0A%0A%23%20c1%3A%20assignment%2C%20%20%20nothing%20is%20copied%2C%20everything%20is%20shared%0A%23%20c2%3A%20shallow%20copy%2C%20first%20element%20is%20copied%2C%20underlying%20is%20shared%0A%23%20c3%3A%20deep%20copy%2C%20%20%20%20everything%20is%20copied%2C%20nothing%20is%20shared%0A}{Copying}
+ \vspace{2em}
 
  Or define your own custom copy logic:
- \href{https://memory-graph.com/#code=import+copy%0A%0Aa+%3D+%5B+%5B1%2C+2%5D%2C+%5B%27x%27%2C+%27y%27%5D+%5D%0A%0Ac1+%3D+a++++++++++++++++%0Ac2+%3D+copy.copy%28a%29+++++%0Ac3+%3D+copy.deepcopy%28a%29+%0A%0A%23+c1%3A+assignment%2C+++nothing+is+copied%2C+everything+is+shared%0A%23+c2%3A+shallow+copy%2C+first+element+is+copied%2C+underlying+is+shared%0A%23+c3%3A+deep+copy%2C++++everything+is+copied%2C+nothing+is+shared%0A%0Adef+custom_copy%28a%29%3A%0A++++c+%3D+a.copy%28%29+%23+shallow+copy%0A++++c%5B1%5D+%3D+a%5B1%5D.copy%28%29%0A++++return+c%0A++++%0Ac4+%3D+custom_copy%28a%29%0A%0A%23+c4%3A+custom+copy%2C+++you+decide+what+is+copied+and+shared%0A&breakpoints=18}{Custom Copy}
+ \href{https://memory-graph.com/#code=import%20copy%0A%0Aa%20%3D%20%5B%20%5B1%2C%202%5D%2C%20%5B'x'%2C%20'y'%5D%20%5D%0A%0Ac1%20%3D%20a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0Ac2%20%3D%20copy.copy(a)%20%20%20%20%20%23%20or%3A%20%20a.copy()%20%20list(a)%20%20a%5B%3A%5D%0Ac3%20%3D%20copy.deepcopy(a)%20%0A%0A%23%20c1%3A%20assignment%2C%20%20%20nothing%20is%20copied%2C%20everything%20is%20shared%0A%23%20c2%3A%20shallow%20copy%2C%20first%20element%20is%20copied%2C%20underlying%20is%20shared%0A%23%20c3%3A%20deep%20copy%2C%20%20%20%20everything%20is%20copied%2C%20nothing%20is%20shared%0A%0Adef%20custom_copy(a)%3A%0A%20%20%20%20c%20%3D%20a.copy()%20%23%20shallow%20copy%0A%20%20%20%20c%5B1%5D%20%3D%20a%5B1%5D.copy()%0A%20%20%20%20return%20c%0A%20%20%20%20%0Ac4%20%3D%20custom_copy(a)%0A%0A%23%20c4%3A%20custom%20copy%2C%20%20%20you%20decide%20what%20is%20copied%20and%20shared%0A&breakpoints=18}{Custom Copy}
 \end{frame}
 
-
 \begin{frame}[fragile]{Name Rebinding, live in Web Debugger}
-  Difference between changing and reassigning:
+  Difference between changing a variable and reassigning it:
   \href{https://memory-graph.com/#code=%0Aa+%3D+%5B4%2C+3%2C+2%5D%0Ab+%3D+a%0A%0Ab+%2B%3D+%5B1%5D++++++++%23+changing+%27b%27+changes+%27a%27%0Ab+%3D+%5B100%2C+200%5D++%23+but+reassignment+rebinds+%27b%27+to+another+value%2C+%27a%27+is+uneffected%0A}{Name Rebinding}
+\end{frame}
+
+\begin{frame}[fragile]{Function call, live in Web Debugger}
+  Pass by object reference:
+  \href{https://memory-graph.com/#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/function_call.py}{Function Call with Arguments}
 \end{frame}
 
 \begin{frame}{Data Model Exercises}
   Multiple Choice Exercises, limited time, your best guess please:
   \begin{itemize}
+  \item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph_videos/refs/heads/main/exercises/exercise3.py}{Exercise 3}
   \item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph_videos/refs/heads/main/exercises/exercise8.py}{Exercise 8}
   \item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph_videos/refs/heads/main/exercises/exercise9.py}{Exercise 9}
   \item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph_videos/refs/heads/main/exercises/exercise5.py}{Exercise 5}
@@ -166,9 +174,16 @@
   Or see \href{https://github.com/bterwijn/memory_graph_videos/blob/main/exercises/exercises.md}{more exercises}.
 \end{frame}
 
+\begin{frame}[fragile]{Code Examples}
+  Common exercises for Python beginners:
+  
+  \href{https://memory-graph.com/#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/value_counts.py}{Count the Values using a dict}
+  
+\end{frame}
+
 \begin{frame}[fragile]{Recursion Example}
 \begin{verbatim}
-factorial(n) = n * factorial(n-1)     if n > 0
+factorial(n) = n * factorial(n-1)     if n > 1
              = 1                      otherwise
 
 factorial(4) = 4 * factorial(3)
@@ -241,7 +256,7 @@ Sorting (Algorithm) Examples:
     \item PyCharm
     \item ...
   \end{itemize}
-  Works through a 'watch' now, we will be working on plugins.\\
+  Works through a 'watch' now, we are working on proper plugins.\\
   \vspace{1em}
   
   Environments:
