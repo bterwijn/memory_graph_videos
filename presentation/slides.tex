@@ -176,12 +176,13 @@
 
 \begin{frame}[fragile]{Code Examples}
   Common exercises for Python beginners:
-  
-  \href{https://memory-graph.com/#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/value_counts.py}{Count the Values using a dict}
-  
+  \begin{itemize}
+  \item \href{https://memory-graph.com/#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/value_counts.py}{Count the Values using a dict}
+  \item \href{https://memory-graph.com/#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/value_indices.py}{Index the Values using a dict}
+  \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Recursion Example}
+\begin{frame}[fragile]{Recursion Example: factorial}
 \begin{verbatim}
 factorial(n) = n * factorial(n-1)     if n > 1
              = 1                      otherwise
@@ -200,16 +201,30 @@ factorial(4) = 4 * factorial(3)
 \item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/factorial.py}{factorial}
 \item \href{https://invocation-tree.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/factorial.py}{factorial in Invocation Tree}
 \end{itemize}
+\end{frame}
 
+\begin{frame}[fragile]{Recursion Example: decimal to binary conversion}
+\begin{verbatim}
+convert decimal 100 to binary representation:
+
+  64 32 16  8  4  2  1
+ ---------------------
+   1  1  0  0  1  0  0
+ +64+32       +4       = 100
+
+\end{verbatim}
+\begin{itemize}
+\item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/binary_convert.py}{binary convert}
+\end{itemize}
 \end{frame}
 
 \begin{frame}{Data Structure Example}
 Larger Data Structures:
 \begin{itemize}
-\item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/linked_list.py&timestep=0.2&play}{Linked List}
-\item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/bin_tree.py&timestep=0.2&play}{Binary Tree} (recursion)
-\item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/hash_set.py&timestep=0.2&play}{Hash Set}
-\item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/hash_map.py&timestep=0.2&play}{Hash Map}
+\item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/linked_list.py&timestep=0.2}{Linked List}
+\item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/bin_tree.py&timestep=0.2}{Binary Tree} (recursion)
+\item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/hash_set.py&timestep=0.2}{Hash Set}
+\item \href{https://memory-graph.com/\#codeurl=https://raw.githubusercontent.com/bterwijn/memory_graph/refs/heads/main/src/hash_map.py&timestep=0.2}{Hash Map}
 \end{itemize}
 \end{frame}
 
