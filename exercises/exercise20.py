@@ -1,14 +1,17 @@
 
 # Output of this Python program?
 a = [1]
-b = a
-b += [2]
-b += (3,)
-b.append(4)
-b.extend([5])
-b.extend((6,))
-b[len(b):] = [7]
-b = b + [8]
+try:
+    b = a
+    b += [2]
+    b += (3,)
+    b.append(4)
+    b.extend([5])
+    b.extend((6,))
+    b[len(b):] = [7]
+    b = b + [8]
+except Exception:
+    pass
 
 print(a)
 # --- possible answers ---
