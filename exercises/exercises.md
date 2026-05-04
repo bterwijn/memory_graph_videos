@@ -1,4 +1,4 @@
-# Memory Graph Exercises
+# [Memory Graph](https://github.com/bterwijn/memory_graph/#python-data-model) Exercises
 
 | Exercise | Difficulty | Image | Code | Solution |
 |----------|-------|-------|------|----------|
