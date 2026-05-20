@@ -1,22 +1,16 @@
-
-# Output of this Python program?
-a = [1]
-try:
-    b = a
-    b += [2]
-    b += (3,)
-    b.append(4)
-    b.extend([5])
-    b.extend((6,))
-    b[len(b):] = [7]
-    b = b + [8]
-except Exception:
-    pass
+# What is the output of this program?
+a = {1:[], 2:[]}
+b = a
+b[1].append(11)
+b = b.copy()
+b[2].append(22)
+b[3] = [33]
 
 print(a)
 # --- possible answers ---
-# A) [1]
-# B) [1, 2]
-# C) [1, 2, 3, 4, 5, 6, 7]
-# D) [1, 2, 3, 4, 5, 6, 7, 8]
-# E) None of the above
+# A) [[0], [1], [2]]
+# B) [[0], [1, 11], [2]]
+# C) [[0], [1, 11], [2, 22]]
+# D) [[0], [1, 11], [2, 22], [3]]
+# E) [[0], [1, 11], [2, 22], [3, 33]]
+# see "Solution" for correct answer
