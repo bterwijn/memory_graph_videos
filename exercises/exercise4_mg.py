@@ -1,3 +1,4 @@
+import memory_graph as mg
 # show separate node for float and str
 mg.config.embedded_types -= {float, str} 
 
