@@ -2,18 +2,18 @@
 # Output of this Python Program?
 class Value:
     def __init__(self, value):
-        self.set(value)
+        self.value = value
     def set(self, value):
         self.value = value
         
 v1 = Value(1)
 v2 = Value(2)
-a = {v1, }
-print(v1 in a, end=' ')
+myset = {v1}
+print(v1 in myset, end=' ')
 v2.set(1)
-print(v2 in a, end=' ')
+print(v2 in myset, end=' ')
 v1.set(2)
-print(v1 in a, end=' ')
+print(v1 in myset, end=' ')
 
 # --- possible answers ---
 # A) TypeError: unhashable type: 'Value'
