@@ -2,8 +2,8 @@
 # Output of this Python Program?
 a = {1: 100}
 b = a
-b.update({2: 200})
-b |= {3: 300}
+b |= {2: 200}
+b.update({3: 300})
 b = b | {4: 400}
 b[5] = 500
 
