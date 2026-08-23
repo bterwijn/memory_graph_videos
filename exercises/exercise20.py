@@ -1,6 +1,6 @@
 
 # What is the output of this program?
-a = {1:[], 2:[]}
+a = {1: [], 2: []}
 b = a
 b[1].append(11)
 b = b.copy()
