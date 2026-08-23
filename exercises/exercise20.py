@@ -1,5 +1,5 @@
 
-# What is the output of this program?
+# Output of this Python program?
 a = {1: [], 2: []}
 b = a
 b[1].append(11)
