@@ -1,20 +1,22 @@
 
+# Output of this Python program?
+import copy
 
-# Output of this Python Program?
-a = {1: [11]}
-b = a
-b[2] = [22]
-b[1].append(111)
-b = b.copy()
-b[3] = [33]
-b[2].append(222)
-b[3].append(333)
+def custom_copy(a):
+    c = a.copy()
+    c[1] = a[1].copy()
+    c[2] = a[2].copy()
+    return c
+
+a = [ [0], [1], [2] ]
+b = custom_copy(a)
+b[0].append(10)
+b[1].append(11)
+b[2].append(12)
 
 print(a)
-# --- possible answers --- 
-# A) {1: [11]}
-# B) {1: [11], 2: [22]}
-# C) {1: [11, 111], 2: [22]}
-# D) {1: [11, 111], 2: [22, 222]}
-# E) {1: [11, 111], 2: [22, 222], 3: [33, 333]}
-
+# --- possible answers ---
+# A) [[0], [1], [2]]
+# B) [[0, 10], [1], [2]]
+# C) [[0, 10], [1, 11], [2]]
+# D) [[0, 10], [1, 11], [2, 12]]
