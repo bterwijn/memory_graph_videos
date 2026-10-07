@@ -1,6 +1,5 @@
 import memory_graph as mg
-# show separate nodes for str
-mg.config.embedded_types -= {str}
+mg.config.embedded_types -= {str} # show separate nodes for str
 
 # Output of this Python program?
 def fun(a, b, c, d):
